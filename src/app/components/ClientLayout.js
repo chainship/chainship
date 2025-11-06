@@ -2,6 +2,7 @@
 
 import { createContext, useContext, useState, useEffect } from "react";
 import Navbar from "./Navbar";
+import Footer from "./Footer";
 
 const ThemeContext = createContext();
 
@@ -57,6 +58,7 @@ export default function ClientLayout({ children }) {
     <ThemeContext.Provider value={{ isDark, toggleTheme }}>
       <Navbar />
       {children}
+      <Footer />
     </ThemeContext.Provider>
   );
 }

@@ -42,16 +42,16 @@ export default function Home() {
       
       <main className="relative z-10 flex w-full flex-col items-center">
         {/* Hero Container */}
-        <div className="flex w-full max-w-6xl flex-col items-center gap-20 px-6 py-32 text-center">
+        <div className="flex w-full max-w-6xl flex-col items-center gap-12 sm:gap-20 px-4 sm:px-6 py-24 sm:py-32 text-center">
           {/* Hero Section */}
           <motion.div 
-            className="flex flex-col items-center gap-8 max-w-4xl"
+            className="flex flex-col items-center gap-6 sm:gap-8 max-w-4xl"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
             <motion.h2 
-              className="text-6xl md:text-8xl font-bold leading-[0.95] tracking-tighter text-black dark:text-white"
+              className="text-4xl sm:text-6xl md:text-8xl font-bold leading-[0.95] tracking-tighter text-black dark:text-white"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
@@ -60,7 +60,7 @@ export default function Home() {
               <span className="text-black/30 dark:text-white/30">Web3 Builders</span>
             </motion.h2>
             <motion.p 
-              className="text-xl md:text-2xl text-black/50 dark:text-white/50 leading-relaxed max-w-2xl font-light tracking-wide"
+              className="text-lg sm:text-xl md:text-2xl text-black/50 dark:text-white/50 leading-relaxed max-w-2xl font-light tracking-wide px-4"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
@@ -71,26 +71,26 @@ export default function Home() {
 
           {/* CTA */}
           <motion.div 
-            className="flex flex-col sm:flex-row gap-6 mt-12"
+            className="flex flex-col sm:flex-row gap-4 sm:gap-6 mt-6 sm:mt-12 w-full sm:w-auto px-4"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
           >
             <motion.button 
-              className="px-10 py-4 bg-black dark:bg-white text-white dark:text-black text-sm font-bold uppercase tracking-[0.2em] rounded-full hover:opacity-90 transition-opacity flex items-center justify-center gap-2"
+              className="w-full sm:w-auto px-8 sm:px-10 py-3 sm:py-4 bg-black dark:bg-white text-white dark:text-black text-xs sm:text-sm font-bold uppercase tracking-[0.2em] rounded-full hover:opacity-90 transition-opacity flex items-center justify-center gap-2"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
               Get a Quote
-              <ChevronsLeftRight size={18} />
+              <ChevronsLeftRight size={16} className="sm:w-[18px] sm:h-[18px]" />
             </motion.button>
             <motion.button 
-              className="px-10 py-4 border border-black/30 dark:border-white/30 text-black dark:text-white text-sm font-bold uppercase tracking-[0.2em] rounded-full hover:border-black/50 dark:hover:border-white/50 transition-colors flex items-center justify-center gap-2"
+              className="w-full sm:w-auto px-8 sm:px-10 py-3 sm:py-4 border border-black/30 dark:border-white/30 text-black dark:text-white text-xs sm:text-sm font-bold uppercase tracking-[0.2em] rounded-full hover:border-black/50 dark:hover:border-white/50 transition-colors flex items-center justify-center gap-2"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
               View Work
-              <ChevronRight size={18} />
+              <ChevronRight size={16} className="sm:w-[18px] sm:h-[18px]" />
             </motion.button>
           </motion.div>
         </div>
@@ -111,19 +111,19 @@ export default function Home() {
         </div>
 
         {/* Final CTA */}
-        <div className="w-full py-20">
+        <div className="w-full py-16 sm:py-20">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-center px-6"
+            className="text-center px-4 sm:px-6"
           >
-            <h3 className="text-3xl md:text-4xl font-bold text-black dark:text-white mb-6">
+            <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-black dark:text-white mb-4 sm:mb-6">
               Ready to Ship Your Web3 Project?
             </h3>
             <motion.button
-              className="px-12 py-5 bg-black dark:bg-white text-white dark:text-black text-sm font-bold uppercase tracking-[0.2em] rounded-full hover:opacity-90 transition-opacity"
+              className="px-8 sm:px-12 py-4 sm:py-5 bg-black dark:bg-white text-white dark:text-black text-xs sm:text-sm font-bold uppercase tracking-[0.2em] rounded-full hover:opacity-90 transition-opacity"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >

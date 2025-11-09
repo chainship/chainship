@@ -21,10 +21,10 @@ export default function QuotePage() {
             <Zap size={16} className="text-black dark:text-white" />
             <span className="text-sm font-medium text-black dark:text-white">Fast turnaround guaranteed</span>
           </div>
-          <h1 className="text-5xl md:text-7xl font-bold text-black dark:text-white mb-6">
+          <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold text-black dark:text-white mb-6 px-4">
             Get Your Quote
           </h1>
-          <p className="text-xl text-black/60 dark:text-white/60 max-w-2xl mx-auto">
+          <p className="text-lg sm:text-xl text-black/60 dark:text-white/60 max-w-2xl mx-auto px-4">
             Tell us about your Web3 project and we'll get back to you within 24 hours with a detailed quote.
           </p>
         </motion.div>
@@ -34,7 +34,7 @@ export default function QuotePage() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="border border-black/10 dark:border-white/10 rounded-lg p-8 md:p-12 backdrop-blur-sm"
+          className="border border-accent rounded-lg p-8 md:p-12 backdrop-blur-sm"
         >
           <form className="space-y-8">
             {/* Contact Info */}
@@ -48,7 +48,7 @@ export default function QuotePage() {
                   id="name"
                   name="name"
                   required
-                  className="w-full px-4 py-3 border border-black/10 dark:border-white/10 rounded-lg bg-white dark:bg-black text-black dark:text-white focus:outline-none focus:border-black/30 dark:focus:border-white/30 transition-colors"
+                  className="w-full px-4 py-3 border border-accent rounded-lg bg-white dark:bg-black text-black dark:text-white focus:outline-none focus:shadow-accent transition-all"
                   placeholder="Your name"
                 />
               </div>
@@ -62,7 +62,7 @@ export default function QuotePage() {
                   id="email"
                   name="email"
                   required
-                  className="w-full px-4 py-3 border border-black/10 dark:border-white/10 rounded-lg bg-white dark:bg-black text-black dark:text-white focus:outline-none focus:border-black/30 dark:focus:border-white/30 transition-colors"
+                  className="w-full px-4 py-3 border border-accent rounded-lg bg-white dark:bg-black text-black dark:text-white focus:outline-none focus:shadow-accent transition-all"
                   placeholder="your@email.com"
                 />
               </div>
@@ -77,7 +77,7 @@ export default function QuotePage() {
                   type="text"
                   id="company"
                   name="company"
-                  className="w-full px-4 py-3 border border-black/10 dark:border-white/10 rounded-lg bg-white dark:bg-black text-black dark:text-white focus:outline-none focus:border-black/30 dark:focus:border-white/30 transition-colors"
+                  className="w-full px-4 py-3 border border-accent rounded-lg bg-white dark:bg-black text-black dark:text-white focus:outline-none focus:shadow-accent transition-all"
                   placeholder="Your company"
                 />
               </div>
@@ -90,7 +90,7 @@ export default function QuotePage() {
                   type="text"
                   id="telegram"
                   name="telegram"
-                  className="w-full px-4 py-3 border border-black/10 dark:border-white/10 rounded-lg bg-white dark:bg-black text-black dark:text-white focus:outline-none focus:border-black/30 dark:focus:border-white/30 transition-colors"
+                  className="w-full px-4 py-3 border border-accent rounded-lg bg-white dark:bg-black text-black dark:text-white focus:outline-none focus:shadow-accent transition-all"
                   placeholder="@yourusername"
                 />
               </div>
@@ -105,7 +105,7 @@ export default function QuotePage() {
                 id="projectType"
                 name="projectType"
                 required
-                className="w-full px-4 py-3 border border-black/10 dark:border-white/10 rounded-lg bg-white dark:bg-black text-black dark:text-white focus:outline-none focus:border-black/30 dark:focus:border-white/30 transition-colors"
+                className="w-full px-4 py-3 border border-accent rounded-lg bg-white dark:bg-black text-black dark:text-white focus:outline-none focus:shadow-accent transition-all"
               >
                 <option value="">Select project type</option>
                 <option value="web3-app">Web3 Application</option>
@@ -128,7 +128,7 @@ export default function QuotePage() {
                 id="budget"
                 name="budget"
                 required
-                className="w-full px-4 py-3 border border-black/10 dark:border-white/10 rounded-lg bg-white dark:bg-black text-black dark:text-white focus:outline-none focus:border-black/30 dark:focus:border-white/30 transition-colors"
+                className="w-full px-4 py-3 border border-accent rounded-lg bg-white dark:bg-black text-black dark:text-white focus:outline-none focus:shadow-accent transition-all"
               >
                 <option value="">Select budget range</option>
                 <option value="5k-10k">$5K - $10K</option>
@@ -149,7 +149,7 @@ export default function QuotePage() {
                 id="timeline"
                 name="timeline"
                 required
-                className="w-full px-4 py-3 border border-black/10 dark:border-white/10 rounded-lg bg-white dark:bg-black text-black dark:text-white focus:outline-none focus:border-black/30 dark:focus:border-white/30 transition-colors"
+                className="w-full px-4 py-3 border border-accent rounded-lg bg-white dark:bg-black text-black dark:text-white focus:outline-none focus:shadow-accent transition-all"
               >
                 <option value="">Select timeline</option>
                 <option value="urgent">ASAP (1-2 weeks)</option>
@@ -170,7 +170,7 @@ export default function QuotePage() {
                 name="description"
                 required
                 rows={6}
-                className="w-full px-4 py-3 border border-black/10 dark:border-white/10 rounded-lg bg-white dark:bg-black text-black dark:text-white focus:outline-none focus:border-black/30 dark:focus:border-white/30 transition-colors resize-none"
+                className="w-full px-4 py-3 border border-accent rounded-lg bg-white dark:bg-black text-black dark:text-white focus:outline-none focus:shadow-accent transition-all resize-none"
                 placeholder="Tell us about your project: What are you building? What's the main goal? Any specific features or requirements?"
               />
             </div>
@@ -204,7 +204,7 @@ export default function QuotePage() {
                 id="additional"
                 name="additional"
                 rows={4}
-                className="w-full px-4 py-3 border border-black/10 dark:border-white/10 rounded-lg bg-white dark:bg-black text-black dark:text-white focus:outline-none focus:border-black/30 dark:focus:border-white/30 transition-colors resize-none"
+                className="w-full px-4 py-3 border border-accent rounded-lg bg-white dark:bg-black text-black dark:text-white focus:outline-none focus:shadow-accent transition-all resize-none"
                 placeholder="Any other details we should know? Existing codebase? Design assets? Team size?"
               />
             </div>
@@ -212,7 +212,7 @@ export default function QuotePage() {
             {/* Submit */}
             <motion.button
               type="submit"
-              className="w-full px-8 py-4 bg-black dark:bg-white text-white dark:text-black rounded-lg font-bold text-lg hover:opacity-90 transition-opacity flex items-center justify-center gap-2"
+              className="w-full px-8 py-4 border-2 border-accent text-black dark:text-white rounded-lg font-bold text-lg hover:shadow-accent transition-all flex items-center justify-center gap-2"
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
             >

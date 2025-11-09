@@ -17,10 +17,10 @@ export default function ContactPage() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h1 className="text-5xl md:text-7xl font-bold text-black dark:text-white mb-6">
+          <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold text-black dark:text-white mb-6">
             Get in Touch
           </h1>
-          <p className="text-xl text-black/60 dark:text-white/60 max-w-2xl mx-auto">
+          <p className="text-lg sm:text-xl text-black/60 dark:text-white/60 max-w-2xl mx-auto px-4">
             Ready to start your Web3 project? We'd love to hear from you.
           </p>
         </motion.div>
@@ -41,7 +41,7 @@ export default function ContactPage() {
                   type="text"
                   id="name"
                   name="name"
-                  className="w-full px-4 py-3 border border-black/10 dark:border-white/10 rounded-lg bg-white dark:bg-black text-black dark:text-white focus:outline-none focus:border-black/30 dark:focus:border-white/30 transition-colors"
+                  className="w-full px-4 py-3 border border-accent rounded-lg bg-white dark:bg-black text-black dark:text-white focus:outline-none focus:shadow-accent transition-all"
                   placeholder="Your name"
                 />
               </div>
@@ -54,7 +54,7 @@ export default function ContactPage() {
                   type="email"
                   id="email"
                   name="email"
-                  className="w-full px-4 py-3 border border-black/10 dark:border-white/10 rounded-lg bg-white dark:bg-black text-black dark:text-white focus:outline-none focus:border-black/30 dark:focus:border-white/30 transition-colors"
+                  className="w-full px-4 py-3 border border-accent rounded-lg bg-white dark:bg-black text-black dark:text-white focus:outline-none focus:shadow-accent transition-all"
                   placeholder="your@email.com"
                 />
               </div>
@@ -67,7 +67,7 @@ export default function ContactPage() {
                   type="text"
                   id="company"
                   name="company"
-                  className="w-full px-4 py-3 border border-black/10 dark:border-white/10 rounded-lg bg-white dark:bg-black text-black dark:text-white focus:outline-none focus:border-black/30 dark:focus:border-white/30 transition-colors"
+                  className="w-full px-4 py-3 border border-accent rounded-lg bg-white dark:bg-black text-black dark:text-white focus:outline-none focus:shadow-accent transition-all"
                   placeholder="Your company"
                 />
               </div>
@@ -80,14 +80,14 @@ export default function ContactPage() {
                   id="message"
                   name="message"
                   rows={6}
-                  className="w-full px-4 py-3 border border-black/10 dark:border-white/10 rounded-lg bg-white dark:bg-black text-black dark:text-white focus:outline-none focus:border-black/30 dark:focus:border-white/30 transition-colors resize-none"
+                  className="w-full px-4 py-3 border border-accent rounded-lg bg-white dark:bg-black text-black dark:text-white focus:outline-none focus:shadow-accent transition-all resize-none"
                   placeholder="Tell us about your project..."
                 />
               </div>
 
               <motion.button
                 type="submit"
-                className="w-full px-8 py-4 bg-black dark:bg-white text-white dark:text-black rounded-lg font-medium hover:opacity-90 transition-opacity flex items-center justify-center gap-2"
+                className="w-full px-8 py-4 border-2 border-accent text-black dark:text-white rounded-lg font-medium hover:shadow-accent transition-all flex items-center justify-center gap-2"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
               >
@@ -104,7 +104,7 @@ export default function ContactPage() {
             transition={{ duration: 0.6, delay: 0.4 }}
             className="space-y-8"
           >
-            <div className="border border-black/10 dark:border-white/10 rounded-lg p-8">
+            <div className="border border-accent rounded-lg p-8">
               <h3 className="text-2xl font-bold text-black dark:text-white mb-6">
                 Other Ways to Reach Us
               </h3>
@@ -114,7 +114,7 @@ export default function ContactPage() {
                   href="mailto:hello@chainship.dev"
                   className="flex items-center gap-4 text-black/60 dark:text-white/60 hover:text-black dark:hover:text-white transition-colors"
                 >
-                  <div className="w-12 h-12 rounded-full border border-black/10 dark:border-white/10 flex items-center justify-center">
+                  <div className="w-12 h-12 rounded-full border border-accent flex items-center justify-center">
                     <Mail size={20} />
                   </div>
                   <div>
@@ -129,7 +129,7 @@ export default function ContactPage() {
                   rel="noopener noreferrer"
                   className="flex items-center gap-4 text-black/60 dark:text-white/60 hover:text-black dark:hover:text-white transition-colors"
                 >
-                  <div className="w-12 h-12 rounded-full border border-black/10 dark:border-white/10 flex items-center justify-center">
+                  <div className="w-12 h-12 rounded-full border border-accent flex items-center justify-center">
                     <MessageCircle size={20} />
                   </div>
                   <div>
@@ -144,7 +144,7 @@ export default function ContactPage() {
                   rel="noopener noreferrer"
                   className="flex items-center gap-4 text-black/60 dark:text-white/60 hover:text-black dark:hover:text-white transition-colors"
                 >
-                  <div className="w-12 h-12 rounded-full border border-black/10 dark:border-white/10 flex items-center justify-center">
+                  <div className="w-12 h-12 rounded-full border border-accent flex items-center justify-center">
                     <Twitter size={20} />
                   </div>
                   <div>
@@ -159,7 +159,7 @@ export default function ContactPage() {
                   rel="noopener noreferrer"
                   className="flex items-center gap-4 text-black/60 dark:text-white/60 hover:text-black dark:hover:text-white transition-colors"
                 >
-                  <div className="w-12 h-12 rounded-full border border-black/10 dark:border-white/10 flex items-center justify-center">
+                  <div className="w-12 h-12 rounded-full border border-accent flex items-center justify-center">
                     <Github size={20} />
                   </div>
                   <div>
@@ -170,7 +170,7 @@ export default function ContactPage() {
               </div>
             </div>
 
-            <div className="border border-black/10 dark:border-white/10 rounded-lg p-8">
+            <div className="border border-accent rounded-lg p-8">
               <h3 className="text-xl font-bold text-black dark:text-white mb-4">
                 Response Time
               </h3>

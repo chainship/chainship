@@ -37,10 +37,10 @@ export default function WhyChooseSection() {
         transition={{ duration: 0.6 }}
         className="text-center mb-16"
       >
-        <h3 className="text-4xl md:text-5xl font-bold text-black dark:text-white mb-4">
+        <h3 className="text-3xl sm:text-4xl md:text-5xl font-bold text-black dark:text-white mb-4 px-4">
           Why Chainship?
         </h3>
-        <p className="text-lg text-black/50 dark:text-white/50">
+        <p className="text-base sm:text-lg text-black/50 dark:text-white/50 px-4">
           Your remote Web3 dev squad
         </p>
       </motion.div>
@@ -55,18 +55,16 @@ export default function WhyChooseSection() {
             transition={{ duration: 0.6, delay: index * 0.1 }}
             whileHover={{ 
               scale: 1.02,
-              boxShadow: "0 10px 30px rgba(236, 72, 153, 0.2)",
-              borderColor: "rgba(236, 72, 153, 0.5)"
             }}
-            className="group flex gap-4 p-6 border border-black/10 dark:border-white/10 rounded-2xl backdrop-blur-sm bg-white/50 dark:bg-black/50 transition-all cursor-pointer"
+            className="group flex gap-4 p-6 border border-accent hover:shadow-accent rounded-2xl backdrop-blur-sm bg-white/50 dark:bg-black/50 transition-all cursor-pointer"
           >
             <div className="flex-shrink-0">
-              <div className="w-14 h-14 rounded-2xl bg-black dark:bg-white group-hover:bg-pink-500 transition-colors flex items-center justify-center">
-                <reason.icon className="w-7 h-7 text-white dark:text-black group-hover:text-white transition-colors" />
+              <div className="w-14 h-14 rounded-2xl bg-black dark:bg-white flex items-center justify-center transition-colors">
+                <reason.icon className="w-7 h-7 text-white dark:text-black" />
               </div>
             </div>
             <div>
-              <h4 className="text-xl font-bold text-black dark:text-white mb-2 group-hover:text-pink-500 transition-colors">
+              <h4 className="text-xl font-bold text-black dark:text-white mb-2 transition-colors">
                 {reason.title}
               </h4>
               <p className="text-black/60 dark:text-white/60 leading-relaxed">

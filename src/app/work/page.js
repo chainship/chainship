@@ -57,10 +57,10 @@ export default function WorkPage() {
           transition={{ duration: 0.6 }}
           className="text-center mb-20"
         >
-          <h1 className="text-5xl md:text-7xl font-bold text-black dark:text-white mb-6">
+          <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold text-black dark:text-white mb-6">
             Our Work
           </h1>
-          <p className="text-xl text-black/60 dark:text-white/60 max-w-2xl mx-auto">
+          <p className="text-lg sm:text-xl text-black/60 dark:text-white/60 max-w-2xl mx-auto px-4">
             Real Web3 projects. Real results. See what we've shipped.
           </p>
         </motion.div>
@@ -74,7 +74,7 @@ export default function WorkPage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="border border-black/10 dark:border-white/10 rounded-lg overflow-hidden backdrop-blur-sm hover:border-black/20 dark:hover:border-white/20 transition-all"
+              className="border border-accent rounded-lg overflow-hidden backdrop-blur-sm hover:shadow-accent transition-all"
             >
               {/* Project Image Placeholder */}
               <div className="w-full h-64 md:h-96 bg-gradient-to-br from-black/5 to-black/10 dark:from-white/5 dark:to-white/10 flex items-center justify-center">
@@ -85,7 +85,7 @@ export default function WorkPage() {
 
               <div className="p-8">
                 <div className="flex flex-wrap items-center justify-between gap-4 mb-4">
-                  <h3 className="text-3xl font-bold text-black dark:text-white">
+                  <h3 className="text-2xl sm:text-3xl font-bold text-black dark:text-white">
                     {project.title}
                   </h3>
                   <span className="text-sm text-black/50 dark:text-white/50">
@@ -124,7 +124,7 @@ export default function WorkPage() {
                   {project.tech.map((tech, i) => (
                     <span
                       key={i}
-                      className="px-3 py-1 text-xs border border-black/10 dark:border-white/10 rounded-full text-black/70 dark:text-white/70"
+                      className="px-3 py-1 text-xs border border-accent rounded-full text-black/70 dark:text-white/70"
                     >
                       {tech}
                     </span>
@@ -150,11 +150,11 @@ export default function WorkPage() {
           transition={{ duration: 0.6 }}
           className="text-center mt-20"
         >
-          <h3 className="text-3xl font-bold text-black dark:text-white mb-6">
+          <h3 className="text-2xl sm:text-3xl font-bold text-black dark:text-white mb-6 px-4">
             Your Project Could Be Next
           </h3>
           <motion.button
-            className="px-12 py-5 bg-black dark:bg-white text-white dark:text-black text-sm font-bold uppercase tracking-[0.2em] rounded-full hover:opacity-90 transition-opacity"
+            className="px-8 sm:px-12 py-4 sm:py-5 border-2 border-accent text-black dark:text-white text-xs sm:text-sm font-bold uppercase tracking-[0.2em] rounded-full hover:shadow-accent transition-all"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >

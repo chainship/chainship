@@ -41,10 +41,10 @@ export default function ProcessSection() {
         transition={{ duration: 0.6 }}
         className="text-center mb-16"
       >
-        <h3 className="text-4xl md:text-5xl font-bold text-black dark:text-white mb-4">
+        <h3 className="text-3xl sm:text-4xl md:text-5xl font-bold text-black dark:text-white mb-4 px-4">
           How We Work
         </h3>
-        <p className="text-lg text-black/50 dark:text-white/50">
+        <p className="text-base sm:text-lg text-black/50 dark:text-white/50 px-4">
           From quote to launch in 4 simple steps
         </p>
       </motion.div>
@@ -72,21 +72,20 @@ export default function ProcessSection() {
             
             <div className="relative z-10 text-center">
               <motion.div
-                className="w-16 h-16 mx-auto mb-4 rounded-2xl bg-black dark:bg-white group-hover:bg-pink-500 transition-colors flex items-center justify-center"
+                className="w-16 h-16 mx-auto mb-4 rounded-2xl bg-black dark:bg-white flex items-center justify-center transition-colors"
                 whileHover={{ 
                   scale: 1.15,
-                  boxShadow: "0 10px 30px rgba(236, 72, 153, 0.4)"
                 }}
                 transition={{ duration: 0.3 }}
               >
-                <step.icon className="w-8 h-8 text-white dark:text-black group-hover:text-white transition-colors" />
+                <step.icon className="w-8 h-8 text-white dark:text-black" />
               </motion.div>
               
-              <div className="text-xs font-bold text-black/40 dark:text-white/40 group-hover:text-pink-500 mb-2 tracking-wider transition-colors">
+              <div className="text-xs font-bold text-black/40 dark:text-white/40 mb-2 tracking-wider transition-colors">
                 STEP {step.number}
               </div>
               
-              <h4 className="text-xl font-bold text-black dark:text-white mb-2 group-hover:text-pink-500 transition-colors">
+              <h4 className="text-xl font-bold text-black dark:text-white mb-2 transition-colors">
                 {step.title}
               </h4>
               

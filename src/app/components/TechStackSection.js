@@ -28,10 +28,10 @@ export default function TechStackSection() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h3 className="text-4xl md:text-5xl font-bold text-black dark:text-white mb-4">
+          <h3 className="text-3xl sm:text-4xl md:text-5xl font-bold text-black dark:text-white mb-4 px-4">
             Our Tech Stack
           </h3>
-          <p className="text-lg text-black/50 dark:text-white/50">
+          <p className="text-base sm:text-lg text-black/50 dark:text-white/50 px-4">
             Industry-leading tools and frameworks
           </p>
         </motion.div>
@@ -47,14 +47,13 @@ export default function TechStackSection() {
               whileHover={{ 
                 scale: 1.1, 
                 y: -5,
-                boxShadow: "0 10px 30px rgba(236, 72, 153, 0.2)"
               }}
-              className="group relative px-6 py-3 border border-black/10 dark:border-white/10 rounded-full backdrop-blur-sm bg-white/50 dark:bg-black/50 hover:border-pink-500/50 cursor-default"
+              className="group relative px-6 py-3 border border-accent hover:shadow-accent rounded-full backdrop-blur-sm bg-white/50 dark:bg-black/50 cursor-default transition-all"
             >
-              <span className="text-sm font-semibold text-black dark:text-white">
+              <span className="text-sm font-semibold text-black dark:text-white transition-colors">
                 {tech.name}
               </span>
-              <span className="ml-2 text-xs text-black/40 dark:text-white/40 group-hover:text-pink-500 transition-colors">
+              <span className="ml-2 text-xs text-black/40 dark:text-white/40 transition-colors">
                 {tech.category}
               </span>
             </motion.div>

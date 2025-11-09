@@ -62,10 +62,10 @@ export default function ServicesPage() {
           transition={{ duration: 0.6 }}
           className="text-center mb-20"
         >
-          <h1 className="text-5xl md:text-7xl font-bold text-black dark:text-white mb-6">
+          <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold text-black dark:text-white mb-6">
             Our Services
           </h1>
-          <p className="text-xl text-black/60 dark:text-white/60 max-w-2xl mx-auto">
+          <p className="text-lg sm:text-xl text-black/60 dark:text-white/60 max-w-2xl mx-auto px-4">
             Full-stack Web3 development services. From landing pages to complex dApps.
           </p>
         </motion.div>
@@ -79,20 +79,20 @@ export default function ServicesPage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="border border-black/10 dark:border-white/10 rounded-lg p-8 backdrop-blur-sm hover:border-black/20 dark:hover:border-white/20 transition-all"
+              className="border border-accent rounded-lg p-8 backdrop-blur-sm hover:shadow-accent transition-all"
             >
               <div className="flex flex-col md:flex-row gap-6">
                 <div className="flex-shrink-0">
-                  <div className="w-16 h-16 rounded-full bg-black dark:bg-white flex items-center justify-center">
-                    <service.icon className="w-8 h-8 text-white dark:text-black" />
+                  <div className="w-16 h-16 rounded-full border-2 border-accent flex items-center justify-center">
+                    <service.icon className="w-8 h-8 text-black dark:text-white" />
                   </div>
                 </div>
                 
                 <div className="flex-grow">
-                  <h3 className="text-2xl font-bold text-black dark:text-white mb-3">
+                  <h3 className="text-xl sm:text-2xl font-bold text-black dark:text-white mb-3">
                     {service.title}
                   </h3>
-                  <p className="text-black/60 dark:text-white/60 mb-6">
+                  <p className="text-sm sm:text-base text-black/60 dark:text-white/60 mb-6">
                     {service.description}
                   </p>
                   
@@ -105,7 +105,7 @@ export default function ServicesPage() {
                         {service.tech.map((tech, i) => (
                           <span
                             key={i}
-                            className="px-3 py-1 text-xs border border-black/10 dark:border-white/10 rounded-full text-black/70 dark:text-white/70"
+                            className="px-3 py-1 text-xs border border-accent rounded-full text-black/70 dark:text-white/70"
                           >
                             {tech}
                           </span>
@@ -141,14 +141,14 @@ export default function ServicesPage() {
           transition={{ duration: 0.6 }}
           className="text-center mt-20"
         >
-          <h3 className="text-3xl font-bold text-black dark:text-white mb-6">
+          <h3 className="text-2xl sm:text-3xl font-bold text-black dark:text-white mb-6 px-4">
             Need Something Custom?
           </h3>
-          <p className="text-black/60 dark:text-white/60 mb-8">
+          <p className="text-base sm:text-lg text-black/60 dark:text-white/60 mb-8 px-4">
             Every blockchain project is unique. Let's discuss your specific needs.
           </p>
           <motion.button
-            className="px-12 py-5 bg-black dark:bg-white text-white dark:text-black text-sm font-bold uppercase tracking-[0.2em] rounded-full hover:opacity-90 transition-opacity"
+            className="px-8 sm:px-12 py-4 sm:py-5 border-2 border-accent text-black dark:text-white text-xs sm:text-sm font-bold uppercase tracking-[0.2em] rounded-full hover:shadow-accent transition-all"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >

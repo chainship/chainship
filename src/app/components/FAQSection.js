@@ -48,10 +48,10 @@ export default function FAQSection() {
         transition={{ duration: 0.6 }}
         className="text-center mb-16"
       >
-        <h3 className="text-4xl md:text-5xl font-bold text-black dark:text-white mb-4">
+        <h3 className="text-3xl sm:text-4xl md:text-5xl font-bold text-black dark:text-white mb-4 px-4">
           Frequently Asked Questions
         </h3>
-        <p className="text-lg text-black/50 dark:text-white/50">
+        <p className="text-base sm:text-lg text-black/50 dark:text-white/50 px-4">
           Everything you need to know
         </p>
       </motion.div>
@@ -65,23 +65,22 @@ export default function FAQSection() {
             viewport={{ once: true }}
             transition={{ duration: 0.4, delay: index * 0.1 }}
             whileHover={{
-              boxShadow: "0 10px 30px rgba(236, 72, 153, 0.2)",
-              borderColor: "rgba(236, 72, 153, 0.5)"
+              boxShadow: "0 10px 30px rgba(0, 0, 0, 0.1)",
             }}
-            className="group border border-black/10 dark:border-white/10 rounded-lg overflow-hidden backdrop-blur-sm bg-white/50 dark:bg-black/50 transition-all"
+            className="group border border-accent hover:shadow-accent rounded-lg overflow-hidden backdrop-blur-sm bg-white/50 dark:bg-black/50 transition-all"
           >
             <button
               onClick={() => toggleFAQ(index)}
-              className="w-full px-6 py-5 flex items-center justify-between text-left hover:bg-pink-500/5 transition-colors"
+              className="w-full px-6 py-5 flex items-center justify-between text-left hover:bg-black/5 dark:hover:bg-white/5 transition-colors"
             >
-              <span className="font-semibold text-black dark:text-white group-hover:text-pink-500 pr-4 transition-colors">
+              <span className="font-semibold text-black dark:text-white pr-4 transition-colors">
                 {faq.question}
               </span>
               <div className="flex-shrink-0">
                 {openIndex === index ? (
-                  <Minus className="w-5 h-5 text-pink-500" />
+                  <Minus className="w-5 h-5 text-black dark:text-white" />
                 ) : (
-                  <Plus className="w-5 h-5 text-black/40 dark:text-white/40 group-hover:text-pink-500 transition-colors" />
+                  <Plus className="w-5 h-5 text-black/40 dark:text-white/40 transition-colors" />
                 )}
               </div>
             </button>

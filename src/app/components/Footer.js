@@ -21,7 +21,7 @@ export default function Footer() {
                 href="https://twitter.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2 rounded-full border border-black/10 dark:border-white/10 hover:bg-black/5 dark:hover:bg-white/5 transition-colors text-black dark:text-white"
+                className="p-2 rounded-full border border-accent hover:shadow-accent transition-all text-black dark:text-white"
                 aria-label="Twitter"
               >
                 <Twitter size={18} />
@@ -30,7 +30,7 @@ export default function Footer() {
                 href="https://github.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2 rounded-full border border-black/10 dark:border-white/10 hover:bg-black/5 dark:hover:bg-white/5 transition-colors text-black dark:text-white"
+                className="p-2 rounded-full border border-accent hover:shadow-accent transition-all text-black dark:text-white"
                 aria-label="GitHub"
               >
                 <Github size={18} />
@@ -39,7 +39,7 @@ export default function Footer() {
                 href="https://linkedin.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2 rounded-full border border-black/10 dark:border-white/10 hover:bg-black/5 dark:hover:bg-white/5 transition-colors text-black dark:text-white"
+                className="p-2 rounded-full border border-accent hover:shadow-accent transition-all text-black dark:text-white"
                 aria-label="LinkedIn"
               >
                 <Linkedin size={18} />
@@ -48,7 +48,7 @@ export default function Footer() {
                 href="https://discord.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2 rounded-full border border-black/10 dark:border-white/10 hover:bg-black/5 dark:hover:bg-white/5 transition-colors text-black dark:text-white"
+                className="p-2 rounded-full border border-accent hover:shadow-accent transition-all text-black dark:text-white"
                 aria-label="Discord"
               >
                 <MessageCircle size={18} />

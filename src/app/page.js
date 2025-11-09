@@ -87,7 +87,7 @@ export default function Home() {
           >
             <Link href="/quote">
               <motion.button 
-                className="w-full sm:w-auto px-8 sm:px-10 py-3 sm:py-4 bg-black dark:bg-white text-white dark:text-black text-xs sm:text-sm font-bold uppercase tracking-[0.2em] rounded-full hover:opacity-90 transition-all flex items-center justify-center gap-2"
+                className="w-full sm:w-auto px-8 sm:px-10 py-3 sm:py-4 border-2 border-accent text-black dark:text-white text-xs sm:text-sm font-bold uppercase tracking-[0.2em] rounded-full hover:shadow-accent transition-all flex items-center justify-center gap-2"
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -97,7 +97,7 @@ export default function Home() {
             </Link>
             <Link href="/work">
               <motion.button 
-                className="w-full sm:w-auto px-8 sm:px-10 py-3 sm:py-4 border-2 border-black/30 dark:border-white/30 text-black dark:text-white text-xs sm:text-sm font-bold uppercase tracking-[0.2em] rounded-full hover:border-black dark:hover:border-white hover:bg-black/5 dark:hover:bg-white/5 transition-all flex items-center justify-center gap-2"
+                className="w-full sm:w-auto px-8 sm:px-10 py-3 sm:py-4 border-2 border-accent text-black dark:text-white text-xs sm:text-sm font-bold uppercase tracking-[0.2em] rounded-full hover:shadow-accent transition-all flex items-center justify-center gap-2"
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -160,7 +160,7 @@ export default function Home() {
             </p>
             <Link href="/quote">
               <motion.button
-                className="px-8 sm:px-12 py-4 sm:py-5 bg-black dark:bg-white text-white dark:text-black text-xs sm:text-sm font-bold uppercase tracking-[0.2em] rounded-full hover:opacity-90 transition-all"
+                className="px-8 sm:px-12 py-4 sm:py-5 border-2 border-accent text-black dark:text-white text-xs sm:text-sm font-bold uppercase tracking-[0.2em] rounded-full hover:shadow-accent transition-all"
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
               >

@@ -37,10 +37,10 @@ export default function ServicesSection() {
         transition={{ duration: 0.6 }}
         className="text-center mb-16"
       >
-        <h3 className="text-4xl md:text-5xl font-bold text-black dark:text-white mb-4">
+        <h3 className="text-3xl sm:text-4xl md:text-5xl font-bold text-black dark:text-white mb-4 px-4">
           What We Build
         </h3>
-        <p className="text-lg text-black/50 dark:text-white/50">
+        <p className="text-base sm:text-lg text-black/50 dark:text-white/50 px-4">
           End-to-end blockchain solutions
         </p>
       </motion.div>
@@ -56,13 +56,11 @@ export default function ServicesSection() {
             whileHover={{ 
               y: -8,
               scale: 1.05,
-              boxShadow: "0 10px 30px rgba(236, 72, 153, 0.2)",
-              borderColor: "rgba(236, 72, 153, 0.5)"
             }}
-            className="group p-6 border border-black/10 dark:border-white/10 rounded-2xl backdrop-blur-sm bg-white/50 dark:bg-black/50 transition-all cursor-pointer"
+            className="group p-6 border border-accent hover:shadow-accent rounded-2xl backdrop-blur-sm bg-white/50 dark:bg-black/50 transition-all cursor-pointer"
           >
-            <service.icon className="w-10 h-10 mb-4 text-black dark:text-white group-hover:text-pink-500 transition-colors" />
-            <h4 className="text-lg font-bold text-black dark:text-white mb-2 group-hover:text-pink-500 transition-colors">
+            <service.icon className="w-10 h-10 mb-4 text-black dark:text-white transition-colors" />
+            <h4 className="text-lg font-bold text-black dark:text-white mb-2 transition-colors">
               {service.title}
             </h4>
             <p className="text-sm text-black/60 dark:text-white/60 leading-relaxed">

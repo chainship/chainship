@@ -4,6 +4,7 @@ import { Moon, Sun, Menu, X, Palette } from "lucide-react";
 import { useTheme } from "./ClientLayout";
 import Link from "next/link";
 import { useState } from "react";
+import Image from "next/image";
 
 const colorSchemes = [
   { name: 'Fuchsia', value: '217 70 239' },
@@ -34,8 +35,19 @@ export default function Navbar() {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 border-b border-black/5 bg-white/80 backdrop-blur-md dark:border-white/5 dark:bg-black/80 transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-3 flex items-center justify-between">
-        <Link href="/" className="text-lg sm:text-xl font-bold tracking-tight text-black dark:text-white hover:opacity-80 transition-opacity">
-          CHAINSHIP
+        <Link href="/" className="flex items-center gap-2 sm:gap-3 hover:opacity-80 transition-opacity">
+          <div className="relative w-10 h-10 sm:w-12 sm:h-12">
+            <Image 
+              src="/logo-transparent-bg.png" 
+              alt="Chainship Logo" 
+              fill
+              className="object-contain"
+              priority
+            />
+          </div>
+          <span className="text-lg sm:text-xl font-bold tracking-tight text-black dark:text-white">
+            CHAINSHIP
+          </span>
         </Link>
         
         {/* Desktop Menu */}

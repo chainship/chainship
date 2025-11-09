@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { Twitter, Github, Linkedin, Mail, MessageCircle } from "lucide-react";
 
 export default function Footer() {
@@ -10,9 +11,19 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12">
           {/* Brand Column */}
           <div className="lg:col-span-2">
-            <h3 className="text-2xl font-bold text-black dark:text-white mb-4">
-              CHAINSHIP
-            </h3>
+            <div className="flex items-center gap-3 mb-4">
+              <div className="relative w-14 h-14">
+                <Image 
+                  src="/logo-transparent-bg.png" 
+                  alt="Chainship Logo" 
+                  fill
+                  className="object-contain"
+                />
+              </div>
+              <h3 className="text-2xl font-bold text-black dark:text-white">
+                CHAINSHIP
+              </h3>
+            </div>
             <p className="text-black/60 dark:text-white/60 mb-6 max-w-sm">
               Remote-first Web3 development team. We build blockchain applications, dApps, and smart contract integrations at lightning speed.
             </p>

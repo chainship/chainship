@@ -1,3 +1,35 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  :root {
+    --color-accent: #ec4899;
+    --color-accent-hover: #db2777;
+    --gradient-1: linear-gradient(135deg, #ec4899 0%, #8b5cf6 100%);
+    --gradient-2: linear-gradient(135deg, #06b6d4 0%, #3b82f6 100%);
+    --shadow-glow: 0 0 40px rgba(236, 72, 153, 0.3);
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  * {
+    @apply transition-colors duration-300;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  .gradient-text {
+    @apply bg-gradient-to-r from-black to-gray-600 dark:from-white dark:to-gray-400 bg-clip-text text-transparent;
+  }
+  
+  .glow {
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.2);
+  }
+}

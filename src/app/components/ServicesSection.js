@@ -28,7 +28,8 @@ const services = [
 
 export default function ServicesSection() {
   return (
-    <section className="w-full max-w-6xl mx-auto px-6 py-20">
+    <section className="w-full py-20">
+      <div className="max-w-6xl mx-auto px-6">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -52,18 +53,24 @@ export default function ServicesSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: index * 0.1 }}
-            whileHover={{ y: -5 }}
-            className="p-6 border border-black/10 dark:border-white/10 rounded-lg backdrop-blur-sm hover:border-black/20 dark:hover:border-white/20 transition-all"
+            whileHover={{ 
+              y: -8,
+              scale: 1.05,
+              boxShadow: "0 10px 30px rgba(236, 72, 153, 0.2)",
+              borderColor: "rgba(236, 72, 153, 0.5)"
+            }}
+            className="group p-6 border border-black/10 dark:border-white/10 rounded-2xl backdrop-blur-sm bg-white/50 dark:bg-black/50 transition-all cursor-pointer"
           >
-            <service.icon className="w-8 h-8 mb-4 text-black dark:text-white" />
-            <h4 className="text-lg font-bold text-black dark:text-white mb-2">
+            <service.icon className="w-10 h-10 mb-4 text-black dark:text-white group-hover:text-pink-500 transition-colors" />
+            <h4 className="text-lg font-bold text-black dark:text-white mb-2 group-hover:text-pink-500 transition-colors">
               {service.title}
             </h4>
-            <p className="text-sm text-black/60 dark:text-white/60">
+            <p className="text-sm text-black/60 dark:text-white/60 leading-relaxed">
               {service.description}
             </p>
           </motion.div>
         ))}
+      </div>
       </div>
     </section>
   );

@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { ChevronRight, ChevronsLeftRight } from "lucide-react";
 import Link from "next/link";
+import Head from "next/head";
 import ServicesSection from "./components/ServicesSection";
 import WhyChooseSection from "./components/WhyChooseSection";
 import ProcessSection from "./components/ProcessSection";
@@ -14,10 +15,28 @@ import FloatingParticles from "./components/FloatingParticles";
 
 export default function Home() {
   return (
-    <div className="relative flex flex-col min-h-screen bg-white dark:bg-black overflow-hidden transition-colors duration-300">
+    <>
+      {/* SEO Schema Markup for Homepage */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebSite",
+            "name": "Chainship",
+            "url": "https://chainship.in",
+            "potentialAction": {
+              "@type": "SearchAction",
+              "target": "https://chainship.in/search?q={search_term_string}",
+              "query-input": "required name=search_term_string"
+            }
+          })
+        }}
+      />
+      <div className="relative flex flex-col min-h-screen bg-white dark:bg-black overflow-hidden transition-colors duration-300">
 
-      {/* Floating Particles */}
-      <FloatingParticles />
+        {/* Floating Particles */}
+        <FloatingParticles />
 
       {/* Grid Background */}
       <div className="absolute inset-0 bg-[linear-gradient(rgba(0,0,0,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(0,0,0,0.03)_1px,transparent_1px)] dark:bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:50px_50px]"></div>
@@ -224,5 +243,6 @@ export default function Home() {
         </div>
       </main>
     </div>
+    </>
   );
 }

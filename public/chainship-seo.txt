@@ -1,0 +1,27 @@
+Chainship - Remote-First Web3 Development Team
+Web3 development, blockchain developers, dApp development, smart contracts
+Chainship is your remote-first Web3 development team. We specialize in building decentralized applications (dApps), smart contracts, NFT platforms, DeFi protocols, and complete blockchain solutions.
+
+Our expert blockchain developers ship production-ready Web3 projects in 2-4 week sprints. We work with Ethereum, Solidity, React, Next.js, and all major blockchain technologies.
+
+Services:
+- dApp Development
+- Smart Contract Development
+- NFT Platform Development
+- DeFi Protocol Development
+- Token Integration
+- Blockchain Consulting
+- Web3 Wallet Integration
+
+Why Choose Chainship:
+- Remote-first global team
+- 2-4 week development sprints
+- Security-first approach
+- Production-ready code
+- Expert blockchain developers
+- Fast turnaround times
+
+Contact: hello@chainship.in
+Website: https://chainship.in
+
+Chainship Web3 development blockchain dApp smart contracts NFT DeFi remote developers

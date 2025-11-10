@@ -1,9 +1,59 @@
 "use client";
 
+import { useState } from "react";
 import { motion } from "framer-motion";
-import { Mail, MessageCircle, Twitter, Github, Send } from "lucide-react";
+import { Mail, MessageCircle, Twitter, Github, Send, CheckCircle, AlertCircle } from "lucide-react";
 
 export default function ContactPage() {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+  const [loading, setLoading] = useState(false);
+  const [status, setStatus] = useState({ type: "", message: "" });
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+    setStatus({ type: "", message: "" });
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        setStatus({
+          type: "success",
+          message: "Message sent successfully! We'll get back to you soon.",
+        });
+        setFormData({ name: "", email: "", message: "" });
+      } else {
+        setStatus({
+          type: "error",
+          message: data.error || "Failed to send message. Please try again.",
+        });
+      }
+    } catch (error) {
+      setStatus({
+        type: "error",
+        message: "Network error. Please check your connection and try again.",
+      });
+    } finally {
+      setLoading(false);
+    }
+  };
   return (
     <div className="relative min-h-screen bg-white dark:bg-black overflow-hidden transition-colors duration-300">
       {/* Background */}
@@ -32,7 +82,26 @@ export default function ContactPage() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <form className="space-y-6">
+            <form className="space-y-6" onSubmit={handleSubmit}>
+              {status.message && (
+                <motion.div
+                  initial={{ opacity: 0, y: -10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  className={`p-4 rounded-lg border ${
+                    status.type === "success"
+                      ? "border-green-500 bg-green-50 dark:bg-green-950/20 text-green-700 dark:text-green-400"
+                      : "border-red-500 bg-red-50 dark:bg-red-950/20 text-red-700 dark:text-red-400"
+                  } flex items-center gap-2`}
+                >
+                  {status.type === "success" ? (
+                    <CheckCircle size={20} />
+                  ) : (
+                    <AlertCircle size={20} />
+                  )}
+                  <span>{status.message}</span>
+                </motion.div>
+              )}
+
               <div>
                 <label htmlFor="name" className="block text-sm font-medium text-black dark:text-white mb-2">
                   Name
@@ -41,6 +110,9 @@ export default function ContactPage() {
                   type="text"
                   id="name"
                   name="name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  required
                   className="w-full px-4 py-3 border border-accent rounded-lg bg-white dark:bg-black text-black dark:text-white focus:outline-none focus:shadow-accent transition-all"
                   placeholder="Your name"
                 />
@@ -54,21 +126,11 @@ export default function ContactPage() {
                   type="email"
                   id="email"
                   name="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  required
                   className="w-full px-4 py-3 border border-accent rounded-lg bg-white dark:bg-black text-black dark:text-white focus:outline-none focus:shadow-accent transition-all"
                   placeholder="your@email.com"
-                />
-              </div>
-
-              <div>
-                <label htmlFor="company" className="block text-sm font-medium text-black dark:text-white mb-2">
-                  Company (optional)
-                </label>
-                <input
-                  type="text"
-                  id="company"
-                  name="company"
-                  className="w-full px-4 py-3 border border-accent rounded-lg bg-white dark:bg-black text-black dark:text-white focus:outline-none focus:shadow-accent transition-all"
-                  placeholder="Your company"
                 />
               </div>
 
@@ -79,6 +141,9 @@ export default function ContactPage() {
                 <textarea
                   id="message"
                   name="message"
+                  value={formData.message}
+                  onChange={handleChange}
+                  required
                   rows={6}
                   className="w-full px-4 py-3 border border-accent rounded-lg bg-white dark:bg-black text-black dark:text-white focus:outline-none focus:shadow-accent transition-all resize-none"
                   placeholder="Tell us about your project..."
@@ -87,11 +152,12 @@ export default function ContactPage() {
 
               <motion.button
                 type="submit"
-                className="w-full px-8 py-4 border-2 border-accent text-black dark:text-white rounded-lg font-medium hover:shadow-accent transition-all flex items-center justify-center gap-2"
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
+                disabled={loading}
+                className="w-full px-8 py-4 border-2 border-accent text-black dark:text-white rounded-lg font-medium hover:shadow-accent transition-all flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
+                whileHover={{ scale: loading ? 1 : 1.02 }}
+                whileTap={{ scale: loading ? 1 : 0.98 }}
               >
-                Send Message
+                {loading ? "Sending..." : "Send Message"}
                 <Send size={18} />
               </motion.button>
             </form>
@@ -111,7 +177,7 @@ export default function ContactPage() {
               
               <div className="space-y-6">
                 <a
-                  href="mailto:hello@chainship.dev"
+                  href="mailto:hello@chainship.in"
                   className="flex items-center gap-4 text-black/60 dark:text-white/60 hover:text-black dark:hover:text-white transition-colors"
                 >
                   <div className="w-12 h-12 rounded-full border border-accent flex items-center justify-center">
@@ -119,7 +185,7 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <div className="text-sm font-medium text-black/40 dark:text-white/40">Email</div>
-                    <div className="font-medium">hello@chainship.dev</div>
+                    <div className="font-medium">hello@chainship.in</div>
                   </div>
                 </a>
 

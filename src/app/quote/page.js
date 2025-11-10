@@ -1,9 +1,84 @@
 "use client";
 
+import { useState } from "react";
 import { motion } from "framer-motion";
-import { Zap, Send } from "lucide-react";
+import { Zap, Send, CheckCircle, AlertCircle } from "lucide-react";
 
 export default function QuotePage() {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    company: "",
+    projectType: "",
+    budget: "",
+    timeline: "",
+    description: "",
+    blockchain: [],
+  });
+  const [loading, setLoading] = useState(false);
+  const [status, setStatus] = useState({ type: "", message: "" });
+
+  const handleChange = (e) => {
+    const { name, value, type, checked } = e.target;
+    
+    if (type === "checkbox") {
+      setFormData((prev) => ({
+        ...prev,
+        blockchain: checked
+          ? [...prev.blockchain, value]
+          : prev.blockchain.filter((item) => item !== value),
+      }));
+    } else {
+      setFormData({ ...formData, [name]: value });
+    }
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+    setStatus({ type: "", message: "" });
+
+    try {
+      const response = await fetch("/api/quote", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        setStatus({
+          type: "success",
+          message: data.message || "Quote request submitted successfully!",
+        });
+        setFormData({
+          name: "",
+          email: "",
+          company: "",
+          projectType: "",
+          budget: "",
+          timeline: "",
+          description: "",
+          blockchain: [],
+        });
+      } else {
+        setStatus({
+          type: "error",
+          message: data.error || "Failed to submit quote request. Please try again.",
+        });
+      }
+    } catch (error) {
+      setStatus({
+        type: "error",
+        message: "Network error. Please check your connection and try again.",
+      });
+    } finally {
+      setLoading(false);
+    }
+  };
   return (
     <div className="relative min-h-screen bg-white dark:bg-black overflow-hidden transition-colors duration-300">
       {/* Background */}
@@ -36,7 +111,26 @@ export default function QuotePage() {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="border border-accent rounded-lg p-8 md:p-12 backdrop-blur-sm"
         >
-          <form className="space-y-8">
+          <form className="space-y-8" onSubmit={handleSubmit}>
+            {status.message && (
+              <motion.div
+                initial={{ opacity: 0, y: -10 }}
+                animate={{ opacity: 1, y: 0 }}
+                className={`p-4 rounded-lg border ${
+                  status.type === "success"
+                    ? "border-green-500 bg-green-50 dark:bg-green-950/20 text-green-700 dark:text-green-400"
+                    : "border-red-500 bg-red-50 dark:bg-red-950/20 text-red-700 dark:text-red-400"
+                } flex items-center gap-2`}
+              >
+                {status.type === "success" ? (
+                  <CheckCircle size={20} />
+                ) : (
+                  <AlertCircle size={20} />
+                )}
+                <span>{status.message}</span>
+              </motion.div>
+            )}
+
             {/* Contact Info */}
             <div className="grid md:grid-cols-2 gap-6">
               <div>
@@ -47,6 +141,8 @@ export default function QuotePage() {
                   type="text"
                   id="name"
                   name="name"
+                  value={formData.name}
+                  onChange={handleChange}
                   required
                   className="w-full px-4 py-3 border border-accent rounded-lg bg-white dark:bg-black text-black dark:text-white focus:outline-none focus:shadow-accent transition-all"
                   placeholder="Your name"
@@ -61,6 +157,8 @@ export default function QuotePage() {
                   type="email"
                   id="email"
                   name="email"
+                  value={formData.email}
+                  onChange={handleChange}
                   required
                   className="w-full px-4 py-3 border border-accent rounded-lg bg-white dark:bg-black text-black dark:text-white focus:outline-none focus:shadow-accent transition-all"
                   placeholder="your@email.com"
@@ -77,6 +175,8 @@ export default function QuotePage() {
                   type="text"
                   id="company"
                   name="company"
+                  value={formData.company}
+                  onChange={handleChange}
                   className="w-full px-4 py-3 border border-accent rounded-lg bg-white dark:bg-black text-black dark:text-white focus:outline-none focus:shadow-accent transition-all"
                   placeholder="Your company"
                 />
@@ -104,6 +204,8 @@ export default function QuotePage() {
               <select
                 id="projectType"
                 name="projectType"
+                value={formData.projectType}
+                onChange={handleChange}
                 required
                 className="w-full px-4 py-3 border border-accent rounded-lg bg-white dark:bg-black text-black dark:text-white focus:outline-none focus:shadow-accent transition-all"
               >
@@ -127,6 +229,8 @@ export default function QuotePage() {
               <select
                 id="budget"
                 name="budget"
+                value={formData.budget}
+                onChange={handleChange}
                 required
                 className="w-full px-4 py-3 border border-accent rounded-lg bg-white dark:bg-black text-black dark:text-white focus:outline-none focus:shadow-accent transition-all"
               >
@@ -148,6 +252,8 @@ export default function QuotePage() {
               <select
                 id="timeline"
                 name="timeline"
+                value={formData.timeline}
+                onChange={handleChange}
                 required
                 className="w-full px-4 py-3 border border-accent rounded-lg bg-white dark:bg-black text-black dark:text-white focus:outline-none focus:shadow-accent transition-all"
               >
@@ -168,6 +274,8 @@ export default function QuotePage() {
               <textarea
                 id="description"
                 name="description"
+                value={formData.description}
+                onChange={handleChange}
                 required
                 rows={6}
                 className="w-full px-4 py-3 border border-accent rounded-lg bg-white dark:bg-black text-black dark:text-white focus:outline-none focus:shadow-accent transition-all resize-none"
@@ -187,6 +295,8 @@ export default function QuotePage() {
                       type="checkbox"
                       name="blockchain"
                       value={chain.toLowerCase()}
+                      checked={formData.blockchain.includes(chain.toLowerCase())}
+                      onChange={handleChange}
                       className="w-4 h-4 rounded border-black/20 dark:border-white/20"
                     />
                     <span className="text-sm text-black dark:text-white">{chain}</span>
@@ -195,28 +305,17 @@ export default function QuotePage() {
               </div>
             </div>
 
-            {/* Additional Info */}
-            <div>
-              <label htmlFor="additional" className="block text-sm font-medium text-black dark:text-white mb-2">
-                Additional Information
-              </label>
-              <textarea
-                id="additional"
-                name="additional"
-                rows={4}
-                className="w-full px-4 py-3 border border-accent rounded-lg bg-white dark:bg-black text-black dark:text-white focus:outline-none focus:shadow-accent transition-all resize-none"
-                placeholder="Any other details we should know? Existing codebase? Design assets? Team size?"
-              />
-            </div>
+            {/* Additional Info - removed to simplify */}
 
             {/* Submit */}
             <motion.button
               type="submit"
-              className="w-full px-8 py-4 border-2 border-accent text-black dark:text-white rounded-lg font-bold text-lg hover:shadow-accent transition-all flex items-center justify-center gap-2"
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
+              disabled={loading}
+              className="w-full px-8 py-4 border-2 border-accent text-black dark:text-white rounded-lg font-bold text-lg hover:shadow-accent transition-all flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
+              whileHover={{ scale: loading ? 1 : 1.02 }}
+              whileTap={{ scale: loading ? 1 : 0.98 }}
             >
-              Get Your Free Quote
+              {loading ? "Submitting..." : "Get Your Free Quote"}
               <Send size={20} />
             </motion.button>
 

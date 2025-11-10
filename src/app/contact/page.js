@@ -87,16 +87,12 @@ export default function ContactPage() {
                 <motion.div
                   initial={{ opacity: 0, y: -10 }}
                   animate={{ opacity: 1, y: 0 }}
-                  className={`p-4 rounded-lg border ${
-                    status.type === "success"
-                      ? "border-green-500 bg-green-50 dark:bg-green-950/20 text-green-700 dark:text-green-400"
-                      : "border-red-500 bg-red-50 dark:bg-red-950/20 text-red-700 dark:text-red-400"
-                  } flex items-center gap-2`}
+                  className="p-4 rounded-lg border border-accent bg-white dark:bg-black text-black dark:text-white flex items-center gap-2"
                 >
                   {status.type === "success" ? (
-                    <CheckCircle size={20} />
+                    <CheckCircle size={20} className="text-accent flex-shrink-0" />
                   ) : (
-                    <AlertCircle size={20} />
+                    <AlertCircle size={20} className="text-accent flex-shrink-0" />
                   )}
                   <span>{status.message}</span>
                 </motion.div>

@@ -1,9 +1,6 @@
-import { NextResponse } from 'next/server';
-import clientPromise from '@/lib/mongodb';
-
 export const runtime = 'edge';
 
-export async function POST(request) {
+export async function POST(request, { env }) {
   try {
     const body = await request.json();
     const { 
@@ -18,7 +15,7 @@ export async function POST(request) {
 
     // Validate required fields
     if (!name || !email || !projectType || !description) {
-      return NextResponse.json(
+      return Response.json(
         { error: 'Missing required fields' },
         { status: 400 }
       );
@@ -27,42 +24,41 @@ export async function POST(request) {
     // Validate email format
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email)) {
-      return NextResponse.json(
+      return Response.json(
         { error: 'Invalid email format' },
         { status: 400 }
       );
     }
 
-    // Connect to MongoDB
-    const client = await clientPromise;
-    const db = client.db('chainship');
-    const collection = db.collection('quotes');
+    // Insert into Cloudflare D1
+    const result = await env.DB.prepare(
+      'INSERT INTO quotes (name, email, company, project_type, budget, timeline, description, created_at, status, source) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)'
+    )
+      .bind(
+        name,
+        email,
+        company || null,
+        projectType,
+        budget || null,
+        timeline || null,
+        description,
+        new Date().toISOString(),
+        'pending',
+        'website'
+      )
+      .run();
 
-    // Insert quote request
-    const result = await collection.insertOne({
-      name,
-      email,
-      company: company || null,
-      projectType,
-      budget: budget || null,
-      timeline: timeline || null,
-      description,
-      createdAt: new Date(),
-      status: 'pending',
-      source: 'website'
-    });
-
-    return NextResponse.json(
+    return Response.json(
       {
         success: true,
         message: 'Quote request received successfully. We\'ll respond within 24 hours!',
-        id: result.insertedId
+        id: result.meta.last_row_id
       },
       { status: 201 }
     );
   } catch (error) {
     console.error('Quote API Error:', error);
-    return NextResponse.json(
+    return Response.json(
       { error: 'Failed to submit quote request' },
       { status: 500 }
     );

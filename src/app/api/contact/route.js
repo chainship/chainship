@@ -1,16 +1,13 @@
-import { NextResponse } from 'next/server';
-import clientPromise from '@/lib/mongodb';
-
 export const runtime = 'edge';
 
-export async function POST(request) {
+export async function POST(request, { env }) {
   try {
     const body = await request.json();
     const { name, email, message } = body;
 
     // Validate required fields
     if (!name || !email || !message) {
-      return NextResponse.json(
+      return Response.json(
         { error: 'Missing required fields' },
         { status: 400 }
       );
@@ -19,38 +16,37 @@ export async function POST(request) {
     // Validate email format
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email)) {
-      return NextResponse.json(
+      return Response.json(
         { error: 'Invalid email format' },
         { status: 400 }
       );
     }
 
-    // Connect to MongoDB
-    const client = await clientPromise;
-    const db = client.db('chainship');
-    const collection = db.collection('contacts');
+    // Insert into Cloudflare D1
+    const result = await env.DB.prepare(
+      'INSERT INTO contacts (name, email, message, created_at, status, source) VALUES (?, ?, ?, ?, ?, ?)'
+    )
+      .bind(
+        name,
+        email,
+        message,
+        new Date().toISOString(),
+        'new',
+        'website'
+      )
+      .run();
 
-    // Insert contact message
-    const result = await collection.insertOne({
-      name,
-      email,
-      message,
-      createdAt: new Date(),
-      status: 'new',
-      source: 'website'
-    });
-
-    return NextResponse.json(
+    return Response.json(
       {
         success: true,
         message: 'Contact message received successfully',
-        id: result.insertedId
+        id: result.meta.last_row_id
       },
       { status: 201 }
     );
   } catch (error) {
     console.error('Contact API Error:', error);
-    return NextResponse.json(
+    return Response.json(
       { error: 'Failed to submit contact message' },
       { status: 500 }
     );

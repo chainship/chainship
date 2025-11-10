@@ -1,7 +1,0 @@
-name = "chainship"
-compatibility_date = "2024-01-01"
-
-[[d1_databases]]
-binding = "DB"
-database_name = "chainship-db"
-database_id = "1dd4b6fc-5e51-453b-874a-0259f305f27c"

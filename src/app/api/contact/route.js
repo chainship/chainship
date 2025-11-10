@@ -1,6 +1,6 @@
 export const runtime = 'edge';
 
-export async function POST(request, context) {
+export async function POST(request) {
   try {
     const body = await request.json();
     const { name, email, message } = body;
@@ -22,44 +22,41 @@ export async function POST(request, context) {
       );
     }
 
-    // Get DB from context.env (Cloudflare) or context.cloudflare.env
-    const env = context?.cloudflare?.env || context?.env || {};
-    const DB = env.DB;
-
-    if (!DB) {
-      // For local development or if DB is not bound
-      console.warn('D1 database not available. Logging submission instead.');
-      console.log('Contact submission:', { name, email, message, timestamp: new Date().toISOString() });
-      
-      return Response.json(
-        {
-          success: true,
-          message: 'Contact message received successfully (dev mode)',
-          id: Date.now()
+    // Insert into Supabase via REST API
+    const response = await fetch(
+      `https://zbpcvojulkxjznovhiyx.supabase.co/rest/v1/contacts`,
+      {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'apikey': process.env.SUPABASE_ANON_KEY,
+          'Authorization': `Bearer ${process.env.SUPABASE_ANON_KEY}`,
+          'Prefer': 'return=representation'
         },
-        { status: 201 }
-      );
+        body: JSON.stringify({
+          name,
+          email,
+          message,
+          created_at: new Date().toISOString(),
+          status: 'new',
+          source: 'website'
+        })
+      }
+    );
+
+    if (!response.ok) {
+      const error = await response.text();
+      console.error('Supabase error:', error);
+      throw new Error('Database insertion failed');
     }
 
-    // Insert into Cloudflare D1
-    const result = await DB.prepare(
-      'INSERT INTO contacts (name, email, message, created_at, status, source) VALUES (?, ?, ?, ?, ?, ?)'
-    )
-      .bind(
-        name,
-        email,
-        message,
-        new Date().toISOString(),
-        'new',
-        'website'
-      )
-      .run();
+    const result = await response.json();
 
     return Response.json(
       {
         success: true,
         message: 'Contact message received successfully',
-        id: result.meta.last_row_id
+        id: result[0]?.id
       },
       { status: 201 }
     );

@@ -1,6 +1,6 @@
 export const runtime = 'edge';
 
-export async function POST(request, { env }) {
+export async function POST(request, context) {
   try {
     const body = await request.json();
     const { 
@@ -30,8 +30,30 @@ export async function POST(request, { env }) {
       );
     }
 
+    // Get DB from context.env (Cloudflare) or context.cloudflare.env
+    const env = context?.cloudflare?.env || context?.env || {};
+    const DB = env.DB;
+
+    if (!DB) {
+      // For local development or if DB is not bound
+      console.warn('D1 database not available. Logging submission instead.');
+      console.log('Quote submission:', { 
+        name, email, company, projectType, budget, timeline, description,
+        timestamp: new Date().toISOString() 
+      });
+      
+      return Response.json(
+        {
+          success: true,
+          message: 'Quote request received successfully (dev mode). We\'ll respond within 24 hours!',
+          id: Date.now()
+        },
+        { status: 201 }
+      );
+    }
+
     // Insert into Cloudflare D1
-    const result = await env.DB.prepare(
+    const result = await DB.prepare(
       'INSERT INTO quotes (name, email, company, project_type, budget, timeline, description, created_at, status, source) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)'
     )
       .bind(

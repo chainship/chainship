@@ -27,7 +27,7 @@ const projects = [
     client: "BlockGov DAO",
     challenge: "Build a governance platform for community voting and proposal management",
     solution: "Full-stack dApp with proposal creation, voting mechanism, and treasury management",
-    impact: "200+ active voters, 50+ proposals executed",
+    impact: "200+ active voters, 10+ proposals executed",
     tech: ["Next.js", "Snapshot", "Gnosis Safe", "Aragon"],
     image: "/placeholder-project3.jpg"
   },

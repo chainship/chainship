@@ -60,7 +60,7 @@ export default function ServicesPage() {
             Our Services
           </h1>
           <p className="text-xl sm:text-2xl text-black/50 dark:text-white/50 max-w-3xl mx-auto font-light">
-            Full-stack Web3 development services. From landing pages to complex dApps.
+            Full-stack Web3 development across EVM, Solana, Sui and emerging chains.
           </p>
         </div>
 

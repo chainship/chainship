@@ -311,7 +311,7 @@ export default function QuotePage() {
             <div className="text-sm text-black/60 dark:text-white/60">Response Time</div>
           </div>
           <div className="p-6">
-            <div className="text-3xl font-bold text-black dark:text-white mb-2">50+</div>
+            <div className="text-3xl font-bold text-black dark:text-white mb-2">10+</div>
             <div className="text-sm text-black/60 dark:text-white/60">Projects Shipped</div>
           </div>
           <div className="p-6">

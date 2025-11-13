@@ -16,7 +16,7 @@ export default function Footer() {
               </h3>
             </div>
             <p className="text-black/60 dark:text-white/60 mb-6 max-w-sm">
-              Remote-first Web3 development team. We build blockchain applications, dApps, and smart contract integrations at lightning speed.
+              Remote-first Web3 development team. We build blockchain applications across EVM, Solana, Sui and emerging chains — smart contracts, dApps, and full-stack integrations.
             </p>
             <div className="flex gap-3">
               <a

@@ -65,7 +65,7 @@ export default function Home() {
               </span>
             </h1>
             <p className="text-2xl sm:text-3xl md:text-4xl text-black/40 dark:text-white/40 leading-snug max-w-4xl font-light tracking-tight">
-              We build your <span className="text-black dark:text-white font-normal">Web3 vision</span> — fast, global, done.
+              We build your <span className="text-black dark:text-white font-normal">Web3 vision</span> across EVM, Solana, Sui & beyond.
             </p>
             {/* Feature Pills */}
             <div className="flex flex-wrap items-center justify-center gap-3">

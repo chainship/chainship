@@ -3,12 +3,17 @@
 const technologies = [
   { name: "React", category: "Frontend" },
   { name: "Next.js", category: "Framework" },
-  { name: "Solidity", category: "Smart Contracts" },
-  { name: "Ethereum", category: "Blockchain" },
+  { name: "Solidity", category: "EVM Contracts" },
+  { name: "Rust", category: "Solana/Sui" },
+  { name: "Ethereum", category: "EVM Chain" },
+  { name: "Solana", category: "Blockchain" },
+  { name: "Sui", category: "Blockchain" },
   { name: "Polygon", category: "Layer 2" },
   { name: "Hardhat", category: "Development" },
+  { name: "Anchor", category: "Solana Framework" },
   { name: "Web3.js", category: "Integration" },
-  { name: "Ethers.js", category: "Integration" },
+  { name: "Ethers.js", category: "EVM Integration" },
+  { name: "@solana/web3.js", category: "Solana SDK" },
   { name: "IPFS", category: "Storage" },
   { name: "The Graph", category: "Indexing" },
   { name: "Tailwind", category: "Styling" },
@@ -21,10 +26,10 @@ export default function TechStackSection() {
       <div className="max-w-6xl mx-auto px-6">
         <div className="text-center mb-16">
           <h3 className="text-4xl sm:text-5xl md:text-6xl font-black tracking-tight text-black dark:text-white mb-6">
-            Our Tech Stack
+            Multi-Chain Expertise
           </h3>
           <p className="text-xl text-black/50 dark:text-white/50 font-light">
-            Industry-leading tools and frameworks
+            EVM, Solana, Sui and cutting-edge blockchain technologies
           </p>
         </div>
 

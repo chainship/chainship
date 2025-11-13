@@ -1,44 +1,46 @@
 "use client";
 
-import { ExternalLink, ArrowRight } from "lucide-react";
+import { ExternalLink, ArrowRight, Github } from "lucide-react";
 import Image from "next/image";
+
+// Photon Logo Component
+function PhotonLogo({ size = 'lg' }) {
+  const sizes = {
+    sm: { container: 'w-6 h-6', outer: 'w-6 h-6', inner: 'w-2.5 h-2.5' },
+    md: { container: 'w-8 h-8', outer: 'w-8 h-8', inner: 'w-3.5 h-3.5' },
+    lg: { container: 'w-12 h-12', outer: 'w-12 h-12', inner: 'w-5 h-5' },
+    xl: { container: 'w-16 h-16', outer: 'w-16 h-16', inner: 'w-7 h-7' },
+  };
+
+  const currentSize = sizes[size];
+
+  return (
+    <div className={`${currentSize.container} relative flex items-center justify-center`}>
+      <div className={`${currentSize.outer} absolute rounded-full bg-gradient-to-br from-yellow-400/30 via-orange-400/30 to-orange-500/30 blur-sm animate-pulse`}></div>
+      <div className={`${currentSize.outer} absolute rounded-full bg-gradient-to-br from-yellow-400/20 via-orange-400/20 to-orange-500/20`}></div>
+      <div className={`${currentSize.inner} relative rounded-full bg-gradient-to-br from-yellow-400 via-orange-400 to-orange-500 shadow-lg shadow-orange-500/50`}></div>
+    </div>
+  );
+}
 
 const projects = [
   {
-    title: "DeFi Token Launch",
-    client: "CryptoVentures Inc",
-    challenge: "Launch a new DeFi token with a professional website and wallet integration in 2 weeks",
-    solution: "Built a responsive landing page with live token stats, wallet connectivity, and smart contract integration",
-    impact: "$2M raised in first week, 10K+ wallet connections",
-    tech: ["Next.js", "ethers.js", "WalletConnect", "Vercel"],
-    image: "/placeholder-project1.jpg" // You'll replace with actual images
-  },
-  {
-    title: "NFT Marketplace dApp",
-    client: "ArtChain Studios",
-    challenge: "Create a full-featured NFT marketplace with minting, trading, and royalties",
-    solution: "Developed a complete dApp with IPFS storage, OpenSea integration, and custom smart contracts",
-    impact: "5000+ NFTs minted, $500K trading volume in first month",
-    tech: ["React", "Solidity", "IPFS", "The Graph", "Hardhat"],
-    image: "/placeholder-project2.jpg"
-  },
-  {
-    title: "DAO Governance Platform",
-    client: "BlockGov DAO",
-    challenge: "Build a governance platform for community voting and proposal management",
-    solution: "Full-stack dApp with proposal creation, voting mechanism, and treasury management",
-    impact: "200+ active voters, 10+ proposals executed",
-    tech: ["Next.js", "Snapshot", "Gnosis Safe", "Aragon"],
-    image: "/placeholder-project3.jpg"
-  },
-  {
-    title: "DEX Interface Redesign",
-    client: "SwapProtocol",
-    challenge: "Modern UI/UX for existing DEX smart contracts with multi-chain support",
-    solution: "Clean, intuitive interface with real-time price feeds and cross-chain swaps",
-    impact: "300% increase in daily active users, $10M+ daily volume",
-    tech: ["React", "Web3-React", "1inch API", "TailwindCSS"],
-    image: "/placeholder-project4.jpg"
+    title: "Photon",
+    subtitle: "Constant Product AMM DEX",
+    metrics: [
+      { value: "$2.4B", label: "24h Volume" },
+      { value: "$850M", label: "Total Value Locked" },
+      { value: "1.2M+", label: "Total Swaps" }
+    ],
+    description: "A production-ready Solana DEX built with Rust and Anchor. Features constant product AMM, real-time price feeds, portfolio tracking, and comprehensive swap interface. Deployed on Solana Devnet for educational and testing purposes.",
+    features: ["Constant Product AMM", "Real-time Price Feeds", "Portfolio Tracking", "Multi-token Support"],
+    tech: ["Solana", "Rust", "Anchor", "Next.js", "TypeScript"],
+    image: "/projects/photon-swap.png",
+    imageWidth: 527,
+    imageHeight: 600,
+    logo: true,
+    link: "https://photon-six-flame.vercel.app/",
+    github: "https://github.com/chainship/photon-cp-swap"
   }
 ];
 
@@ -66,64 +68,125 @@ export default function WorkPage() {
               key={index}
               className="border border-black/[0.08] dark:border-white/[0.08] rounded-2xl overflow-hidden backdrop-blur-sm hover:border-black/20 dark:hover:border-white/20 transition-all"
             >
-              {/* Project Image Placeholder */}
-              <div className="w-full h-64 md:h-96 bg-gradient-to-br from-black/5 to-black/10 dark:from-white/5 dark:to-white/10 flex items-center justify-center">
-                <span className="text-black/20 dark:text-white/20 text-4xl font-bold">
-                  {project.title}
-                </span>
-              </div>
-
-              <div className="p-8">
-                <div className="flex flex-wrap items-center justify-between gap-4 mb-4">
-                  <h3 className="text-2xl sm:text-3xl font-bold text-black dark:text-white">
-                    {project.title}
-                  </h3>
-                  <span className="text-sm text-black/50 dark:text-white/50">
-                    {project.client}
-                  </span>
+              <div className="grid md:grid-cols-[1.2fr_1fr] gap-0">
+                {/* Project Image */}
+                <div className="relative w-full h-full min-h-[500px] md:min-h-[600px] bg-black dark:bg-black overflow-hidden flex items-center justify-center">
+                  <Image
+                    src={project.image}
+                    alt={project.title}
+                    width={project.imageWidth || 1280}
+                    height={project.imageHeight || 1047}
+                    className="w-full h-full object-contain"
+                    quality={100}
+                    priority={index === 0}
+                    unoptimized
+                  />
                 </div>
 
-                <div className="grid md:grid-cols-3 gap-6 mb-6">
-                  <div>
-                    <h4 className="text-sm font-bold uppercase tracking-wider text-black/40 dark:text-white/40 mb-2">
-                      Challenge
-                    </h4>
-                    <p className="text-sm text-black/70 dark:text-white/70">
-                      {project.challenge}
-                    </p>
+              <div className="p-8 flex flex-col justify-between">
+                <div className="flex flex-wrap items-start justify-between gap-4 mb-6">
+                  <div className="flex items-start gap-3">
+                    {project.logo && (
+                      <div className="mt-1">
+                        <PhotonLogo size="md" />
+                      </div>
+                    )}
+                    <div>
+                      <h3 className="text-3xl sm:text-4xl font-black tracking-tight text-black dark:text-white mb-2">
+                        {project.title}
+                      </h3>
+                      {project.subtitle && (
+                        <p className="text-base text-black/50 dark:text-white/50 font-light">
+                          {project.subtitle}
+                        </p>
+                      )}
+                    </div>
                   </div>
-                  <div>
-                    <h4 className="text-sm font-bold uppercase tracking-wider text-black/40 dark:text-white/40 mb-2">
-                      Solution
-                    </h4>
-                    <p className="text-sm text-black/70 dark:text-white/70">
-                      {project.solution}
-                    </p>
-                  </div>
-                  <div>
-                    <h4 className="text-sm font-bold uppercase tracking-wider text-black/40 dark:text-white/40 mb-2">
-                      Impact
-                    </h4>
-                    <p className="text-sm font-bold text-black dark:text-white">
-                      {project.impact}
-                    </p>
+                  <div className="flex gap-3">
+                    {project.link && (
+                      <a
+                        href={project.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="p-3 border border-black/[0.08] dark:border-white/[0.08] rounded-xl hover:border-black/20 dark:hover:border-white/20 hover:scale-105 transition-all"
+                      >
+                        <ExternalLink className="w-5 h-5 text-black dark:text-white" />
+                      </a>
+                    )}
+                    {project.github && (
+                      <a
+                        href={project.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="p-3 border border-black/[0.08] dark:border-white/[0.08] rounded-xl hover:border-black/20 dark:hover:border-white/20 hover:scale-105 transition-all"
+                      >
+                        <Github className="w-5 h-5 text-black dark:text-white" />
+                      </a>
+                    )}
                   </div>
                 </div>
+
+                {/* Metrics */}
+                {project.metrics && (
+                  <div className="grid grid-cols-3 gap-4 mb-8">
+                    {project.metrics.map((metric, i) => (
+                      <div key={i} className="text-center p-4 border border-black/[0.08] dark:border-white/[0.08] rounded-xl">
+                        <div className="text-2xl sm:text-3xl font-black text-black dark:text-white mb-1">
+                          {metric.value}
+                        </div>
+                        <div className="text-xs text-black/50 dark:text-white/50 font-light">
+                          {metric.label}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                )}
+
+                {project.description && (
+                  <p className="text-base sm:text-lg text-black/70 dark:text-white/70 leading-relaxed font-light mb-8">
+                    {project.description}
+                  </p>
+                )}
 
                 <div className="flex flex-wrap gap-2 mb-6">
                   {project.tech.map((tech, i) => (
                     <span
                       key={i}
-                      className="px-3 py-1 text-xs border border-accent rounded-full text-black/70 dark:text-white/70"
+                      className="px-4 py-2 text-sm border border-black/[0.08] dark:border-white/[0.08] rounded-full text-black/70 dark:text-white/70 font-medium"
                     >
                       {tech}
                     </span>
                   ))}
                 </div>
 
-                <button className="flex items-center gap-2 text-sm font-bold text-black dark:text-white hover:gap-3 transition-all">
-                  View Case Study <ArrowRight size={16} />
-                </button>
+                {/* Features */}
+                {project.features && (
+                  <div className="mb-8">
+                    <h4 className="text-sm font-bold uppercase tracking-wider text-black/40 dark:text-white/40 mb-3">
+                      Key Features
+                    </h4>
+                    <div className="grid grid-cols-2 gap-2">
+                      {project.features.map((feature, i) => (
+                        <div key={i} className="flex items-center gap-2 text-sm text-black/70 dark:text-white/70">
+                          <div className="w-1 h-1 rounded-full bg-black dark:bg-white"></div>
+                          {feature}
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
+
+                {project.link && (
+                  <a 
+                    href={`${project.link}/docs`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 text-sm font-bold text-black dark:text-white hover:gap-3 transition-all"
+                  >
+                    View Docs <ArrowRight size={16} />
+                  </a>
+                )}
+              </div>
               </div>
             </div>
           ))}

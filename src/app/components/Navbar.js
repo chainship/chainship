@@ -38,7 +38,7 @@ export default function Navbar() {
           <img 
             src="/logo.png" 
             alt="Chainship Logo" 
-            className="w-8 h-8 sm:w-9 sm:h-9"
+            className="w-8 h-8 sm:w-9 sm:h-9 dark:invert"
           />
           <span className="text-lg sm:text-xl font-bold tracking-tight text-black dark:text-white">
             CHAINSHIP

@@ -14,7 +14,7 @@ export default function Footer() {
               <img 
                 src="/logo.png" 
                 alt="Chainship Logo" 
-                className="w-8 h-8"
+                className="w-8 h-8 dark:invert"
               />
               <h3 className="text-2xl font-bold text-black dark:text-white">
                 CHAINSHIP

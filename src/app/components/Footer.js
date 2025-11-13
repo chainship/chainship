@@ -180,7 +180,7 @@ export default function Footer() {
         <div className="mt-12 pt-8 border-t border-black/5 dark:border-white/5">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-sm text-black/40 dark:text-white/40">
-              © {new Date().getFullYear()} Chainship. All rights reserved.
+              © {new Date().getFullYear()} Chainship. All rights reserved. Registered in India.
             </p>
             <div className="flex items-center gap-6">
               <Link href="/privacy" className="text-sm text-black/40 dark:text-white/40 hover:text-black dark:hover:text-white transition-colors">
@@ -190,7 +190,7 @@ export default function Footer() {
                 Terms of Service
               </Link>
               <Link href="/legal" className="text-sm text-black/40 dark:text-white/40 hover:text-black dark:hover:text-white transition-colors">
-                Legal Policy
+                Legal
               </Link>
             </div>
           </div>

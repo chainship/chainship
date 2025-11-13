@@ -34,10 +34,10 @@ export default function ProcessSection() {
     <section className="w-full py-20">
       <div className="max-w-6xl mx-auto px-6">
       <div className="text-center mb-16">
-        <h3 className="text-3xl sm:text-4xl md:text-5xl font-bold text-black dark:text-white mb-4 px-4">
+        <h3 className="text-4xl sm:text-5xl md:text-6xl font-black tracking-tight text-black dark:text-white mb-6">
           How We Work
         </h3>
-        <p className="text-base sm:text-lg text-black/50 dark:text-white/50 px-4">
+        <p className="text-xl text-black/50 dark:text-white/50 font-light">
           From quote to launch in 4 simple steps
         </p>
       </div>

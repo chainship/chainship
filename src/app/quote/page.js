@@ -90,16 +90,16 @@ export default function QuotePage() {
             <Zap size={16} className="text-black dark:text-white" />
             <span className="text-sm font-medium text-black dark:text-white">Fast turnaround guaranteed</span>
           </div>
-          <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold text-black dark:text-white mb-6 px-4">
+          <h1 className="text-5xl sm:text-6xl md:text-7xl font-black tracking-tight text-black dark:text-white mb-8">
             Get Your Quote
           </h1>
-          <p className="text-lg sm:text-xl text-black/60 dark:text-white/60 max-w-2xl mx-auto px-4">
+          <p className="text-xl sm:text-2xl text-black/50 dark:text-white/50 max-w-3xl mx-auto font-light">
             Tell us about your Web3 project and we'll get back to you within 24 hours with a detailed quote.
           </p>
         </div>
 
         {/* Quote Form */}
-        <div className="border border-accent rounded-lg p-8 md:p-12 backdrop-blur-sm">
+        <div className="border border-black/[0.08] dark:border-white/[0.08] rounded-2xl p-8 md:p-12 backdrop-blur-sm">
           <form className="space-y-8" onSubmit={handleSubmit}>
             {status.message && (
               <div className="p-4 rounded-lg border border-accent bg-white dark:bg-black text-black dark:text-white flex items-center gap-2">
@@ -292,7 +292,7 @@ export default function QuotePage() {
             <button
               type="submit"
               disabled={loading}
-              className="w-full px-8 py-4 border-2 border-accent text-black dark:text-white rounded-lg font-bold text-lg hover:shadow-accent transition-all flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
+              className="w-full px-8 py-4 bg-black dark:bg-white text-white dark:text-black rounded-lg font-semibold text-lg hover:scale-[1.02] transition-transform flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed shadow-lg shadow-black/10 dark:shadow-white/10"
             >
               {loading ? "Submitting..." : "Get Your Free Quote"}
               <Send size={20} />

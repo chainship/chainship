@@ -56,10 +56,10 @@ export default function ServicesPage() {
       <main className="relative z-10 w-full max-w-6xl mx-auto px-6 pt-32 pb-20">
         {/* Header */}
         <div className="text-center mb-20">
-          <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold text-black dark:text-white mb-6">
+          <h1 className="text-5xl sm:text-6xl md:text-7xl font-black tracking-tight text-black dark:text-white mb-8">
             Our Services
           </h1>
-          <p className="text-lg sm:text-xl text-black/60 dark:text-white/60 max-w-2xl mx-auto px-4">
+          <p className="text-xl sm:text-2xl text-black/50 dark:text-white/50 max-w-3xl mx-auto font-light">
             Full-stack Web3 development services. From landing pages to complex dApps.
           </p>
         </div>
@@ -69,7 +69,7 @@ export default function ServicesPage() {
           {services.map((service, index) => (
             <div
               key={index}
-              className="border border-accent rounded-lg p-8 backdrop-blur-sm hover:shadow-accent transition-all"
+              className="border border-black/[0.08] dark:border-white/[0.08] rounded-2xl p-8 backdrop-blur-sm hover:border-black/20 dark:hover:border-white/20 transition-all"
             >
               <div className="flex flex-col md:flex-row gap-6">
                 <div className="flex-shrink-0">
@@ -131,7 +131,7 @@ export default function ServicesPage() {
           <p className="text-base sm:text-lg text-black/60 dark:text-white/60 mb-8 px-4">
             Every blockchain project is unique. Let's discuss your specific needs.
           </p>
-          <button className="px-8 sm:px-12 py-4 sm:py-5 border-2 border-accent text-black dark:text-white text-xs sm:text-sm font-bold uppercase tracking-[0.2em] rounded-full hover:shadow-accent transition-all">
+          <button className="px-14 py-6 bg-black dark:bg-white text-white dark:text-black text-sm font-semibold tracking-wide rounded-full hover:scale-[1.02] transition-transform shadow-xl shadow-black/10 dark:shadow-white/10">
             Get a Custom Quote
           </button>
         </div>

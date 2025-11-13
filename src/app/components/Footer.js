@@ -1,25 +1,16 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
 import { Twitter, Github, Linkedin, Mail, MessageCircle } from "lucide-react";
 
 export default function Footer() {
   return (
-    <footer className="relative w-full bg-black/[0.03] dark:bg-black border-t border-black/5 dark:border-white/5 transition-colors duration-300">
+    <footer className="relative w-full bg-white dark:bg-black border-t border-black/10 dark:border-white/10 transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-6 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12">
           {/* Brand Column */}
           <div className="lg:col-span-2">
-            <div className="flex items-center gap-3 mb-4">
-              <div className="relative w-14 h-14">
-                <Image 
-                  src="/logo-transparent-bg.png" 
-                  alt="Chainship Logo" 
-                  fill
-                  className="object-contain"
-                />
-              </div>
+            <div className="mb-4">
               <h3 className="text-2xl font-bold text-black dark:text-white">
                 CHAINSHIP
               </h3>
@@ -27,12 +18,12 @@ export default function Footer() {
             <p className="text-black/60 dark:text-white/60 mb-6 max-w-sm">
               Remote-first Web3 development team. We build blockchain applications, dApps, and smart contract integrations at lightning speed.
             </p>
-            <div className="flex gap-4">
+            <div className="flex gap-3">
               <a
                 href="https://twitter.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2 rounded-full border border-accent hover:shadow-accent transition-all text-black dark:text-white"
+                className="p-2.5 rounded-full border border-black/[0.08] dark:border-white/[0.08] hover:bg-black/[0.02] dark:hover:bg-white/[0.02] transition-all text-black dark:text-white"
                 aria-label="Twitter"
               >
                 <Twitter size={18} />
@@ -41,7 +32,7 @@ export default function Footer() {
                 href="https://github.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2 rounded-full border border-accent hover:shadow-accent transition-all text-black dark:text-white"
+                className="p-2.5 rounded-full border border-black/[0.08] dark:border-white/[0.08] hover:bg-black/[0.02] dark:hover:bg-white/[0.02] transition-all text-black dark:text-white"
                 aria-label="GitHub"
               >
                 <Github size={18} />
@@ -50,7 +41,7 @@ export default function Footer() {
                 href="https://linkedin.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2 rounded-full border border-accent hover:shadow-accent transition-all text-black dark:text-white"
+                className="p-2.5 rounded-full border border-black/[0.08] dark:border-white/[0.08] hover:bg-black/[0.02] dark:hover:bg-white/[0.02] transition-all text-black dark:text-white"
                 aria-label="LinkedIn"
               >
                 <Linkedin size={18} />
@@ -59,7 +50,7 @@ export default function Footer() {
                 href="https://discord.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2 rounded-full border border-accent hover:shadow-accent transition-all text-black dark:text-white"
+                className="p-2.5 rounded-full border border-black/[0.08] dark:border-white/[0.08] hover:bg-black/[0.02] dark:hover:bg-white/[0.02] transition-all text-black dark:text-white"
                 aria-label="Discord"
               >
                 <MessageCircle size={18} />
@@ -198,8 +189,8 @@ export default function Footer() {
               <Link href="/terms" className="text-sm text-black/40 dark:text-white/40 hover:text-black dark:hover:text-white transition-colors">
                 Terms of Service
               </Link>
-              <Link href="/cookies" className="text-sm text-black/40 dark:text-white/40 hover:text-black dark:hover:text-white transition-colors">
-                Cookie Policy
+              <Link href="/legal" className="text-sm text-black/40 dark:text-white/40 hover:text-black dark:hover:text-white transition-colors">
+                Legal Policy
               </Link>
             </div>
           </div>

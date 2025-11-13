@@ -4,14 +4,21 @@
 
 @layer base {
   :root {
-    /* Simple black and white - no accent colors */
+    /* Simple black in light mode */
     --color-primary: 0 0 0;
     --color-secondary: 0 0 0;
     --color-light: 0 0 0;
   }
 
+  .dark {
+    /* White in dark mode */
+    --color-primary: 255 255 255;
+    --color-secondary: 255 255 255;
+    --color-light: 255 255 255;
+  }
+
   html {
-    scroll-behavior: smooth;
+    scroll-behavior: auto;
   }
 
   * {

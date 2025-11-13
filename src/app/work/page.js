@@ -51,10 +51,10 @@ export default function WorkPage() {
       <main className="relative z-10 w-full max-w-6xl mx-auto px-6 pt-32 pb-20">
         {/* Header */}
         <div className="text-center mb-20">
-          <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold text-black dark:text-white mb-6">
+          <h1 className="text-5xl sm:text-6xl md:text-7xl font-black tracking-tight text-black dark:text-white mb-8">
             Our Work
           </h1>
-          <p className="text-lg sm:text-xl text-black/60 dark:text-white/60 max-w-2xl mx-auto px-4">
+          <p className="text-xl sm:text-2xl text-black/50 dark:text-white/50 max-w-3xl mx-auto font-light">
             Real Web3 projects. Real results. See what we've shipped.
           </p>
         </div>
@@ -64,7 +64,7 @@ export default function WorkPage() {
           {projects.map((project, index) => (
             <div
               key={index}
-              className="border border-accent rounded-lg overflow-hidden backdrop-blur-sm hover:shadow-accent transition-all"
+              className="border border-black/[0.08] dark:border-white/[0.08] rounded-2xl overflow-hidden backdrop-blur-sm hover:border-black/20 dark:hover:border-white/20 transition-all"
             >
               {/* Project Image Placeholder */}
               <div className="w-full h-64 md:h-96 bg-gradient-to-br from-black/5 to-black/10 dark:from-white/5 dark:to-white/10 flex items-center justify-center">
@@ -134,7 +134,7 @@ export default function WorkPage() {
           <h3 className="text-2xl sm:text-3xl font-bold text-black dark:text-white mb-6 px-4">
             Your Project Could Be Next
           </h3>
-          <button className="px-8 sm:px-12 py-4 sm:py-5 border-2 border-accent text-black dark:text-white text-xs sm:text-sm font-bold uppercase tracking-[0.2em] rounded-full hover:shadow-accent transition-all">
+          <button className="px-14 py-6 bg-black dark:bg-white text-white dark:text-black text-sm font-semibold tracking-wide rounded-full hover:scale-[1.02] transition-transform shadow-xl shadow-black/10 dark:shadow-white/10">
             Start Your Project
           </button>
         </div>

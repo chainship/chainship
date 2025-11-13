@@ -67,11 +67,11 @@ export default function StatsSection() {
   return (
     <section className="w-full py-20">
       <div className="max-w-6xl mx-auto px-6">
-        <div className="text-center mb-12">
-          <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-black dark:text-white mb-4 px-4">
+        <div className="text-center mb-16">
+          <h3 className="text-4xl sm:text-5xl md:text-6xl font-black tracking-tight text-black dark:text-white mb-6">
             Proven Track Record
           </h3>
-          <p className="text-base sm:text-lg text-black/50 dark:text-white/50 px-4">
+          <p className="text-xl text-black/50 dark:text-white/50 font-light">
             Numbers that speak for themselves
           </p>
         </div>

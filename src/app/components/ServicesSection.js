@@ -1,6 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
 import { Code2, Blocks, Coins, Zap } from "lucide-react";
 
 const services = [
@@ -30,33 +29,19 @@ export default function ServicesSection() {
   return (
     <section className="w-full py-20">
       <div className="max-w-6xl mx-auto px-6">
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.6 }}
-        className="text-center mb-16"
-      >
+      <div className="text-center mb-16">
         <h3 className="text-3xl sm:text-4xl md:text-5xl font-bold text-black dark:text-white mb-4 px-4">
           What We Build
         </h3>
         <p className="text-base sm:text-lg text-black/50 dark:text-white/50 px-4">
           End-to-end blockchain solutions
         </p>
-      </motion.div>
+      </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         {services.map((service, index) => (
-          <motion.div
+          <div
             key={index}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: index * 0.1 }}
-            whileHover={{ 
-              y: -8,
-              scale: 1.05,
-            }}
             className="group p-6 border border-accent hover:shadow-accent rounded-2xl backdrop-blur-sm bg-white/50 dark:bg-black/50 transition-all cursor-pointer"
           >
             <service.icon className="w-10 h-10 mb-4 text-black dark:text-white transition-colors" />
@@ -66,7 +51,7 @@ export default function ServicesSection() {
             <p className="text-sm text-black/60 dark:text-white/60 leading-relaxed">
               {service.description}
             </p>
-          </motion.div>
+          </div>
         ))}
       </div>
       </div>

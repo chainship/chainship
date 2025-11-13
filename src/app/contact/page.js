@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import { motion } from "framer-motion";
 import { Mail, MessageCircle, Twitter, Github, Send, CheckCircle, AlertCircle } from "lucide-react";
 
 export default function ContactPage() {
@@ -61,41 +60,28 @@ export default function ContactPage() {
 
       <main className="relative z-10 w-full max-w-6xl mx-auto px-6 pt-32 pb-20">
         {/* Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16"
-        >
+        <div className="text-center mb-16">
           <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold text-black dark:text-white mb-6">
             Get in Touch
           </h1>
           <p className="text-lg sm:text-xl text-black/60 dark:text-white/60 max-w-2xl mx-auto px-4">
             Ready to start your Web3 project? We'd love to hear from you.
           </p>
-        </motion.div>
+        </div>
 
         <div className="grid lg:grid-cols-2 gap-12">
           {/* Contact Form */}
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-          >
+          <div>
             <form className="space-y-6" onSubmit={handleSubmit}>
               {status.message && (
-                <motion.div
-                  initial={{ opacity: 0, y: -10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  className="p-4 rounded-lg border border-accent bg-white dark:bg-black text-black dark:text-white flex items-center gap-2"
-                >
+                <div className="p-4 rounded-lg border border-accent bg-white dark:bg-black text-black dark:text-white flex items-center gap-2">
                   {status.type === "success" ? (
                     <CheckCircle size={20} className="text-accent flex-shrink-0" />
                   ) : (
                     <AlertCircle size={20} className="text-accent flex-shrink-0" />
                   )}
                   <span>{status.message}</span>
-                </motion.div>
+                </div>
               )}
 
               <div>
@@ -146,26 +132,19 @@ export default function ContactPage() {
                 />
               </div>
 
-              <motion.button
+              <button
                 type="submit"
                 disabled={loading}
                 className="w-full px-8 py-4 border-2 border-accent text-black dark:text-white rounded-lg font-medium hover:shadow-accent transition-all flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
-                whileHover={{ scale: loading ? 1 : 1.02 }}
-                whileTap={{ scale: loading ? 1 : 0.98 }}
               >
                 {loading ? "Sending..." : "Send Message"}
                 <Send size={18} />
-              </motion.button>
+              </button>
             </form>
-          </motion.div>
+          </div>
 
           {/* Contact Info */}
-          <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            className="space-y-8"
-          >
+          <div className="space-y-8">
             <div className="border border-accent rounded-lg p-8">
               <h3 className="text-2xl font-bold text-black dark:text-white mb-6">
                 Other Ways to Reach Us
@@ -243,7 +222,7 @@ export default function ContactPage() {
                 For urgent inquiries, please mention "URGENT" in your subject line.
               </p>
             </div>
-          </motion.div>
+          </div>
         </div>
       </main>
     </div>

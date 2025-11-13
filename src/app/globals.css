@@ -4,48 +4,10 @@
 
 @layer base {
   :root {
-    /* 🎨 CHANGE THESE VALUES TO SWITCH COLOR SCHEMES! */
-    
-    /* HOT MAGENTA/FUCHSIA (Active) */
-    --color-primary: 217 70 239;
-    --color-secondary: 236 72 153;
-    --color-light: 240 171 252;
-/*     
-    ACID LIME - Uncomment to use:
-    --color-primary: 132 204 22;
-    --color-secondary: 190 242 100;
-    --color-light: 217 249 157; */
-   
-    
-    /* ELECTRIC VIOLET - Uncomment to use:
-    --color-primary: 124 58 237;
-    --color-secondary: 167 139 250;
-    --color-light: 196 181 253;
-    */
-    
-    /* CYBER ORANGE - Uncomment to use:
-    --color-primary: 255 107 0;
-    --color-secondary: 255 170 0;
-    --color-light: 254 215 170; */
-   
-    
-    /* NEON CYAN - Uncomment to use:
-    --color-primary: 0 217 255;
-    --color-secondary: 6 182 212;
-    --color-light: 103 232 249; */
-   
-    
-    /* ELECTRIC BLUE - Uncomment to use:
-    --color-primary: 14 165 233;
-    --color-secondary: 59 130 246;
-    --color-light: 125 211 252;
-    */
-/*     
-    EMERALD GREEN - Uncomment to use: */
-    /* --color-primary: 16 185 129;
-    --color-secondary: 34 197 94;
-    --color-light: 110 231 183;
-    */
+    /* Simple black and white - no accent colors */
+    --color-primary: 0 0 0;
+    --color-secondary: 0 0 0;
+    --color-light: 0 0 0;
   }
 
   html {

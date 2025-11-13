@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import { motion } from "framer-motion";
 import { Zap, Send, CheckCircle, AlertCircle } from "lucide-react";
 
 export default function QuotePage() {
@@ -86,12 +85,7 @@ export default function QuotePage() {
 
       <main className="relative z-10 w-full max-w-4xl mx-auto px-6 pt-32 pb-20">
         {/* Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16"
-        >
+        <div className="text-center mb-16">
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-black/5 dark:bg-white/5 rounded-full mb-6">
             <Zap size={16} className="text-black dark:text-white" />
             <span className="text-sm font-medium text-black dark:text-white">Fast turnaround guaranteed</span>
@@ -102,29 +96,20 @@ export default function QuotePage() {
           <p className="text-lg sm:text-xl text-black/60 dark:text-white/60 max-w-2xl mx-auto px-4">
             Tell us about your Web3 project and we'll get back to you within 24 hours with a detailed quote.
           </p>
-        </motion.div>
+        </div>
 
         {/* Quote Form */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="border border-accent rounded-lg p-8 md:p-12 backdrop-blur-sm"
-        >
+        <div className="border border-accent rounded-lg p-8 md:p-12 backdrop-blur-sm">
           <form className="space-y-8" onSubmit={handleSubmit}>
             {status.message && (
-              <motion.div
-                initial={{ opacity: 0, y: -10 }}
-                animate={{ opacity: 1, y: 0 }}
-                className="p-4 rounded-lg border border-accent bg-white dark:bg-black text-black dark:text-white flex items-center gap-2"
-              >
+              <div className="p-4 rounded-lg border border-accent bg-white dark:bg-black text-black dark:text-white flex items-center gap-2">
                 {status.type === "success" ? (
                   <CheckCircle size={20} className="text-accent flex-shrink-0" />
                 ) : (
                   <AlertCircle size={20} className="text-accent flex-shrink-0" />
                 )}
                 <span>{status.message}</span>
-              </motion.div>
+              </div>
             )}
 
             {/* Contact Info */}
@@ -304,30 +289,23 @@ export default function QuotePage() {
             {/* Additional Info - removed to simplify */}
 
             {/* Submit */}
-            <motion.button
+            <button
               type="submit"
               disabled={loading}
               className="w-full px-8 py-4 border-2 border-accent text-black dark:text-white rounded-lg font-bold text-lg hover:shadow-accent transition-all flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
-              whileHover={{ scale: loading ? 1 : 1.02 }}
-              whileTap={{ scale: loading ? 1 : 0.98 }}
             >
               {loading ? "Submitting..." : "Get Your Free Quote"}
               <Send size={20} />
-            </motion.button>
+            </button>
 
             <p className="text-sm text-center text-black/40 dark:text-white/40">
               We'll review your submission and get back to you within 24 hours with a detailed quote.
             </p>
           </form>
-        </motion.div>
+        </div>
 
         {/* Trust Indicators */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-          className="mt-12 grid md:grid-cols-3 gap-6 text-center"
-        >
+        <div className="mt-12 grid md:grid-cols-3 gap-6 text-center">
           <div className="p-6">
             <div className="text-3xl font-bold text-black dark:text-white mb-2">24h</div>
             <div className="text-sm text-black/60 dark:text-white/60">Response Time</div>
@@ -340,7 +318,7 @@ export default function QuotePage() {
             <div className="text-3xl font-bold text-black dark:text-white mb-2">100%</div>
             <div className="text-sm text-black/60 dark:text-white/60">Remote Team</div>
           </div>
-        </motion.div>
+        </div>
       </main>
     </div>
   );

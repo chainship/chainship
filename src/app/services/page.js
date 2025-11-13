@@ -1,6 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
 import { Code2, Blocks, Coins, Zap, Layout, Repeat } from "lucide-react";
 
 const services = [
@@ -56,29 +55,20 @@ export default function ServicesPage() {
 
       <main className="relative z-10 w-full max-w-6xl mx-auto px-6 pt-32 pb-20">
         {/* Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-20"
-        >
+        <div className="text-center mb-20">
           <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold text-black dark:text-white mb-6">
             Our Services
           </h1>
           <p className="text-lg sm:text-xl text-black/60 dark:text-white/60 max-w-2xl mx-auto px-4">
             Full-stack Web3 development services. From landing pages to complex dApps.
           </p>
-        </motion.div>
+        </div>
 
         {/* Services Grid */}
         <div className="space-y-16">
           {services.map((service, index) => (
-            <motion.div
+            <div
               key={index}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
               className="border border-accent rounded-lg p-8 backdrop-blur-sm hover:shadow-accent transition-all"
             >
               <div className="flex flex-col md:flex-row gap-6">
@@ -129,32 +119,22 @@ export default function ServicesPage() {
                   </div>
                 </div>
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
 
         {/* CTA */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center mt-20"
-        >
+        <div className="text-center mt-20">
           <h3 className="text-2xl sm:text-3xl font-bold text-black dark:text-white mb-6 px-4">
             Need Something Custom?
           </h3>
           <p className="text-base sm:text-lg text-black/60 dark:text-white/60 mb-8 px-4">
             Every blockchain project is unique. Let's discuss your specific needs.
           </p>
-          <motion.button
-            className="px-8 sm:px-12 py-4 sm:py-5 border-2 border-accent text-black dark:text-white text-xs sm:text-sm font-bold uppercase tracking-[0.2em] rounded-full hover:shadow-accent transition-all"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
+          <button className="px-8 sm:px-12 py-4 sm:py-5 border-2 border-accent text-black dark:text-white text-xs sm:text-sm font-bold uppercase tracking-[0.2em] rounded-full hover:shadow-accent transition-all">
             Get a Custom Quote
-          </motion.button>
-        </motion.div>
+          </button>
+        </div>
       </main>
     </div>
   );

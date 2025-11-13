@@ -1,6 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
 import { Globe, Rocket, Shield, Users } from "lucide-react";
 
 const reasons = [
@@ -30,32 +29,19 @@ export default function WhyChooseSection() {
   return (
     <section className="w-full py-20">
       <div className="max-w-6xl mx-auto px-6">
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.6 }}
-        className="text-center mb-16"
-      >
+      <div className="text-center mb-16">
         <h3 className="text-3xl sm:text-4xl md:text-5xl font-bold text-black dark:text-white mb-4 px-4">
           Why Chainship?
         </h3>
         <p className="text-base sm:text-lg text-black/50 dark:text-white/50 px-4">
           Your remote Web3 dev squad
         </p>
-      </motion.div>
+      </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         {reasons.map((reason, index) => (
-          <motion.div
+          <div
             key={index}
-            initial={{ opacity: 0, x: index % 2 === 0 ? -20 : 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: index * 0.1 }}
-            whileHover={{ 
-              scale: 1.02,
-            }}
             className="group flex gap-4 p-6 border border-accent hover:shadow-accent rounded-2xl backdrop-blur-sm bg-white/50 dark:bg-black/50 transition-all cursor-pointer"
           >
             <div className="flex-shrink-0">
@@ -71,7 +57,7 @@ export default function WhyChooseSection() {
                 {reason.description}
               </p>
             </div>
-          </motion.div>
+          </div>
         ))}
       </div>
       </div>

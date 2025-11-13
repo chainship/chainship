@@ -52,18 +52,19 @@ export default function Navbar() {
         
         {/* Desktop Menu */}
         <div className="hidden md:flex items-center gap-6 lg:gap-8 text-sm font-medium text-black/60 dark:text-white/60">
+          <Link href="/" className="hover:text-black dark:hover:text-white transition-colors">Home</Link>
           <Link href="/services" className="hover:text-black dark:hover:text-white transition-colors">Services</Link>
           <Link href="/work" className="hover:text-black dark:hover:text-white transition-colors">Work</Link>
           <Link href="/contact" className="hover:text-black dark:hover:text-white transition-colors">Contact</Link>
           <Link href="/quote" className="px-4 lg:px-6 py-2 border-2 border-accent text-black dark:text-white rounded-full hover:shadow-accent transition-all text-sm">Get Quote</Link>
-          <button
+          {/* <button
             onClick={cycleColor}
             className="p-2 rounded-full border border-accent hover:shadow-accent transition-all text-black dark:text-white"
             aria-label="Change color scheme"
             title={`Current: ${colorSchemes[currentColorIndex].name}`}
           >
             <Palette size={18} />
-          </button>
+          </button> */}
           <button
             onClick={toggleTheme}
             className="p-2 rounded-full border border-accent hover:shadow-accent transition-all text-black dark:text-white"
@@ -75,14 +76,14 @@ export default function Navbar() {
 
         {/* Mobile Menu Button */}
         <div className="flex md:hidden items-center gap-3">
-          <button
+          {/* <button
             onClick={cycleColor}
             className="p-2 rounded-full border border-accent hover:shadow-accent transition-all text-black dark:text-white"
             aria-label="Change color scheme"
             title={`Current: ${colorSchemes[currentColorIndex].name}`}
           >
             <Palette size={18} />
-          </button>
+          </button> */}
           <button
             onClick={toggleTheme}
             className="p-2 rounded-full border border-accent hover:shadow-accent transition-all text-black dark:text-white"
@@ -104,6 +105,13 @@ export default function Navbar() {
       {mobileMenuOpen && (
         <div className="md:hidden border-t border-black/5 dark:border-white/5 bg-white dark:bg-black">
           <div className="px-4 py-4 space-y-3">
+            <Link 
+              href="/" 
+              className="block py-2 text-base font-medium text-black dark:text-white hover:text-black/60 dark:hover:text-white/60 transition-colors"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              Home
+            </Link>
             <Link 
               href="/services" 
               className="block py-2 text-base font-medium text-black dark:text-white hover:text-black/60 dark:hover:text-white/60 transition-colors"

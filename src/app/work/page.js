@@ -1,6 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
 import { ExternalLink, ArrowRight } from "lucide-react";
 import Image from "next/image";
 
@@ -51,29 +50,20 @@ export default function WorkPage() {
 
       <main className="relative z-10 w-full max-w-6xl mx-auto px-6 pt-32 pb-20">
         {/* Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-20"
-        >
+        <div className="text-center mb-20">
           <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold text-black dark:text-white mb-6">
             Our Work
           </h1>
           <p className="text-lg sm:text-xl text-black/60 dark:text-white/60 max-w-2xl mx-auto px-4">
             Real Web3 projects. Real results. See what we've shipped.
           </p>
-        </motion.div>
+        </div>
 
         {/* Projects */}
         <div className="space-y-20">
           {projects.map((project, index) => (
-            <motion.div
+            <div
               key={index}
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
               className="border border-accent rounded-lg overflow-hidden backdrop-blur-sm hover:shadow-accent transition-all"
             >
               {/* Project Image Placeholder */}
@@ -131,36 +121,23 @@ export default function WorkPage() {
                   ))}
                 </div>
 
-                <motion.button
-                  className="flex items-center gap-2 text-sm font-bold text-black dark:text-white hover:gap-3 transition-all"
-                  whileHover={{ x: 5 }}
-                >
+                <button className="flex items-center gap-2 text-sm font-bold text-black dark:text-white hover:gap-3 transition-all">
                   View Case Study <ArrowRight size={16} />
-                </motion.button>
+                </button>
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
 
         {/* CTA */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center mt-20"
-        >
+        <div className="text-center mt-20">
           <h3 className="text-2xl sm:text-3xl font-bold text-black dark:text-white mb-6 px-4">
             Your Project Could Be Next
           </h3>
-          <motion.button
-            className="px-8 sm:px-12 py-4 sm:py-5 border-2 border-accent text-black dark:text-white text-xs sm:text-sm font-bold uppercase tracking-[0.2em] rounded-full hover:shadow-accent transition-all"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
+          <button className="px-8 sm:px-12 py-4 sm:py-5 border-2 border-accent text-black dark:text-white text-xs sm:text-sm font-bold uppercase tracking-[0.2em] rounded-full hover:shadow-accent transition-all">
             Start Your Project
-          </motion.button>
-        </motion.div>
+          </button>
+        </div>
       </main>
     </div>
   );

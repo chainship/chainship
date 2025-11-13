@@ -10,7 +10,12 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Brand Column */}
           <div className="lg:col-span-1">
-            <div className="mb-4">
+            <div className="mb-4 flex items-center gap-3">
+              <img 
+                src="/logo.png" 
+                alt="Chainship Logo" 
+                className="w-8 h-8"
+              />
               <h3 className="text-2xl font-bold text-black dark:text-white">
                 CHAINSHIP
               </h3>

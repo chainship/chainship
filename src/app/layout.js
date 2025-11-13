@@ -122,7 +122,7 @@ export default function RootLayout({ children }) {
               ],
               "contactPoint": {
                 "@type": "ContactPoint",
-                "email": "hello@chainship.in",
+                "email": "chainship@yahoo.com",
                 "contactType": "Customer Service"
               },
               "aggregateRating": {

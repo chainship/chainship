@@ -152,7 +152,7 @@ export default function ContactPage() {
               
               <div className="space-y-6">
                 <a
-                  href="mailto:hello@chainship.in"
+                  href="mailto:chainship@yahoo.com"
                   className="flex items-center gap-4 text-black/60 dark:text-white/60 hover:text-black dark:hover:text-white transition-colors"
                 >
                   <div className="w-12 h-12 rounded-full border border-accent flex items-center justify-center">
@@ -160,7 +160,7 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <div className="text-sm font-medium text-black/40 dark:text-white/40">Email</div>
-                    <div className="font-medium">hello@chainship.in</div>
+                    <div className="font-medium">chainship@yahoo.com</div>
                   </div>
                 </a>
 

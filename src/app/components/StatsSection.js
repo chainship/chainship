@@ -3,8 +3,8 @@
 import { useRef, useEffect, useState } from "react";
 
 const stats = [
-  { value: 50, suffix: "+", label: "Projects Delivered" },
-  { value: 30, suffix: "+", label: "Happy Clients" },
+  { value: 10, suffix: "+", label: "Projects Delivered" },
+  { value: 20, suffix: "+", label: "Happy Clients" },
   { value: 99, suffix: "%", label: "On-Time Delivery" },
   { value: 24, suffix: "/7", label: "Global Support" }
 ];

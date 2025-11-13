@@ -44,9 +44,9 @@ export default function Home() {
       
       <main className="relative z-10 flex w-full flex-col items-center">
         {/* Hero Container */}
-        <div className="flex w-full max-w-6xl flex-col items-center gap-12 sm:gap-20 px-4 sm:px-6 py-24 sm:py-32 text-center">
+        <div className="flex w-full max-w-6xl flex-col items-center px-6 pt-40 pb-32 text-center">
           {/* Hero Section */}
-          <div className="flex flex-col items-center gap-6 sm:gap-8 max-w-4xl relative">
+          <div className="flex flex-col items-center gap-8 max-w-4xl relative mb-12">
             {/* Animated Badge */}
             <div className="inline-flex items-center gap-2 px-4 py-2 border border-accent/50 rounded-full bg-accent/5 backdrop-blur-sm">
               <span className="w-2 h-2 rounded-full bg-accent"></span>
@@ -55,7 +55,7 @@ export default function Home() {
               </span>
             </div>
 
-            <h2 className="text-4xl sm:text-6xl md:text-8xl font-bold leading-[0.95] tracking-tighter text-black dark:text-white">
+            <h2 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold leading-tight tracking-tighter text-black dark:text-white">
               <span className="inline-block">
                 Remote-First
               </span>
@@ -65,36 +65,36 @@ export default function Home() {
                 <span className="absolute -bottom-2 left-0 w-full h-1 bg-gradient-to-r from-transparent via-accent to-transparent"></span>
               </span>
             </h2>
-            <p className="text-lg sm:text-xl md:text-2xl text-black/50 dark:text-white/50 leading-relaxed max-w-2xl font-light tracking-wide px-4">
+            <p className="text-xl sm:text-2xl md:text-3xl text-black/50 dark:text-white/50 leading-relaxed max-w-3xl font-light">
               We build your <span className="text-accent font-semibold">Web3 vision</span> — fast, global, done.
             </p>
             {/* Feature Pills */}
-            <div className="flex flex-wrap items-center justify-center gap-3 px-4 mt-2">
-              <span className="px-4 py-1.5 text-xs sm:text-sm border border-accent/30 rounded-full bg-accent/5 text-black/60 dark:text-white/60 backdrop-blur-sm">
+            <div className="flex flex-wrap items-center justify-center gap-4">
+              <span className="px-5 py-2 text-sm border border-accent/30 rounded-full bg-accent/5 text-black/60 dark:text-white/60 backdrop-blur-sm">
                 2-4 Week Sprints
               </span>
-              <span className="px-4 py-1.5 text-xs sm:text-sm border border-accent/30 rounded-full bg-accent/5 text-black/60 dark:text-white/60 backdrop-blur-sm">
+              <span className="px-5 py-2 text-sm border border-accent/30 rounded-full bg-accent/5 text-black/60 dark:text-white/60 backdrop-blur-sm">
                 Global Team
               </span>
-              <span className="px-4 py-1.5 text-xs sm:text-sm border border-accent/30 rounded-full bg-accent/5 text-black/60 dark:text-white/60 backdrop-blur-sm">
+              <span className="px-5 py-2 text-sm border border-accent/30 rounded-full bg-accent/5 text-black/60 dark:text-white/60 backdrop-blur-sm">
                 Security First
               </span>
             </div>
           </div>
 
           {/* CTA */}
-          <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 mt-4 sm:mt-6 w-full sm:w-auto px-4">
-            <Link href="/quote">
-              <button className="relative w-full sm:w-auto px-8 sm:px-10 py-3 sm:py-4 border-2 border-accent text-black dark:text-white text-xs sm:text-sm font-bold uppercase tracking-[0.2em] rounded-full hover:shadow-accent transition-all flex items-center justify-center gap-2 overflow-hidden group">
+          <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto max-w-md">
+            <Link href="/quote" className="flex-1">
+              <button className="relative w-full px-10 py-4 border-2 border-accent text-black dark:text-white text-sm font-bold uppercase tracking-[0.2em] rounded-full hover:shadow-accent transition-all flex items-center justify-center gap-2 overflow-hidden group">
                 <span className="absolute inset-0 bg-accent/10"></span>
                 <span className="relative z-10">Get a Quote</span>
-                <ChevronsLeftRight size={16} className="sm:w-[18px] sm:h-[18px] relative z-10" />
+                <ChevronsLeftRight size={18} className="relative z-10" />
               </button>
             </Link>
-            <Link href="/work">
-              <button className="w-full sm:w-auto px-8 sm:px-10 py-3 sm:py-4 border-2 border-accent text-black dark:text-white text-xs sm:text-sm font-bold uppercase tracking-[0.2em] rounded-full hover:shadow-accent transition-all flex items-center justify-center gap-2">
+            <Link href="/work" className="flex-1">
+              <button className="w-full px-10 py-4 border-2 border-accent text-black dark:text-white text-sm font-bold uppercase tracking-[0.2em] rounded-full hover:shadow-accent transition-all flex items-center justify-center gap-2">
                 View Work
-                <ChevronRight size={16} className="sm:w-[18px] sm:h-[18px]" />
+                <ChevronRight size={18} />
               </button>
             </Link>
           </div>
@@ -103,6 +103,12 @@ export default function Home() {
         {/* Services Section */}
         <div className="w-full">
           <ServicesSection />
+        </div>
+
+        
+        {/* Tech Stack Section */}
+        <div className="w-full">
+          <TechStackSection />
         </div>
 
         {/* Stats Section */}
@@ -120,11 +126,6 @@ export default function Home() {
           <ProcessSection />
         </div>
 
-        {/* Tech Stack Section */}
-        <div className="w-full">
-          <TechStackSection />
-        </div>
-
         {/* Testimonials Section */}
         <div className="w-full">
           <TestimonialsSection />
@@ -136,16 +137,16 @@ export default function Home() {
         </div>
 
         {/* Final CTA */}
-        <div className="w-full py-16 sm:py-20 bg-gradient-to-b from-transparent to-black/5 dark:to-white/5">
-          <div className="text-center px-4 sm:px-6">
-            <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-black dark:text-white mb-4 sm:mb-6">
+        <div className="w-full py-20 bg-gradient-to-b from-transparent to-black/5 dark:to-white/5">
+          <div className="text-center px-6 max-w-4xl mx-auto">
+            <h3 className="text-3xl sm:text-4xl md:text-5xl font-bold text-black dark:text-white mb-6">
               Ready to Ship Your Web3 Project?
             </h3>
-            <p className="text-lg text-black/60 dark:text-white/60 mb-8 max-w-2xl mx-auto">
+            <p className="text-xl text-black/60 dark:text-white/60 mb-10 max-w-2xl mx-auto">
               Join the growing list of successful Web3 projects we've helped launch
             </p>
             <Link href="/quote">
-              <button className="px-8 sm:px-12 py-4 sm:py-5 border-2 border-accent text-black dark:text-white text-xs sm:text-sm font-bold uppercase tracking-[0.2em] rounded-full hover:shadow-accent transition-all">
+              <button className="px-12 py-5 border-2 border-accent text-black dark:text-white text-sm font-bold uppercase tracking-[0.2em] rounded-full hover:shadow-accent transition-all">
                 Get Your Quote Today
               </button>
             </Link>

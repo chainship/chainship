@@ -7,9 +7,9 @@ export default function Footer() {
   return (
     <footer className="relative w-full bg-white dark:bg-black border-t border-black/10 dark:border-white/10 transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-6 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Brand Column */}
-          <div className="lg:col-span-2">
+          <div className="lg:col-span-1">
             <div className="mb-4">
               <h3 className="text-2xl font-bold text-black dark:text-white">
                 CHAINSHIP
@@ -81,16 +81,6 @@ export default function Footer() {
               </li>
               <li>
                 <Link href="/services" className="text-black/60 dark:text-white/60 hover:text-black dark:hover:text-white transition-colors text-sm">
-                  Token Integration
-                </Link>
-              </li>
-              <li>
-                <Link href="/services" className="text-black/60 dark:text-white/60 hover:text-black dark:hover:text-white transition-colors text-sm">
-                  NFT Platforms
-                </Link>
-              </li>
-              <li>
-                <Link href="/services" className="text-black/60 dark:text-white/60 hover:text-black dark:hover:text-white transition-colors text-sm">
                   Blockchain Consulting
                 </Link>
               </li>
@@ -104,11 +94,6 @@ export default function Footer() {
             </h4>
             <ul className="space-y-3">
               <li>
-                <Link href="/quote" className="text-black/60 dark:text-white/60 hover:text-black dark:hover:text-white transition-colors text-sm">
-                  Get Quote
-                </Link>
-              </li>
-              <li>
                 <Link href="/work" className="text-black/60 dark:text-white/60 hover:text-black dark:hover:text-white transition-colors text-sm">
                   Portfolio
                 </Link>
@@ -119,13 +104,8 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/careers" className="text-black/60 dark:text-white/60 hover:text-black dark:hover:text-white transition-colors text-sm">
-                  Careers
-                </Link>
-              </li>
-              <li>
-                <Link href="/blog" className="text-black/60 dark:text-white/60 hover:text-black dark:hover:text-white transition-colors text-sm">
-                  Blog
+                <Link href="/pricing" className="text-black/60 dark:text-white/60 hover:text-black dark:hover:text-white transition-colors text-sm">
+                  Pricing
                 </Link>
               </li>
               <li>
@@ -143,33 +123,23 @@ export default function Footer() {
             </h4>
             <ul className="space-y-3">
               <li>
-                <Link href="/docs" className="text-black/60 dark:text-white/60 hover:text-black dark:hover:text-white transition-colors text-sm">
-                  Documentation
-                </Link>
-              </li>
-              <li>
-                <Link href="/case-studies" className="text-black/60 dark:text-white/60 hover:text-black dark:hover:text-white transition-colors text-sm">
-                  Case Studies
-                </Link>
-              </li>
-              <li>
                 <Link href="/faq" className="text-black/60 dark:text-white/60 hover:text-black dark:hover:text-white transition-colors text-sm">
                   FAQ
                 </Link>
               </li>
               <li>
-                <Link href="/pricing" className="text-black/60 dark:text-white/60 hover:text-black dark:hover:text-white transition-colors text-sm">
-                  Pricing
-                </Link>
-              </li>
-              <li>
-                <Link href="/support" className="text-black/60 dark:text-white/60 hover:text-black dark:hover:text-white transition-colors text-sm">
-                  Support
+                <Link href="/quote" className="text-black/60 dark:text-white/60 hover:text-black dark:hover:text-white transition-colors text-sm">
+                  Get Quote
                 </Link>
               </li>
               <li>
                 <Link href="/terms" className="text-black/60 dark:text-white/60 hover:text-black dark:hover:text-white transition-colors text-sm">
-                  Terms & Privacy
+                  Terms
+                </Link>
+              </li>
+              <li>
+                <Link href="/privacy" className="text-black/60 dark:text-white/60 hover:text-black dark:hover:text-white transition-colors text-sm">
+                  Privacy
                 </Link>
               </li>
             </ul>

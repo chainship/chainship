@@ -5,7 +5,7 @@ import { Check } from "lucide-react";
 const packages = [
   {
     name: "MVP Launch",
-    price: "Starting at $5K",
+    price: "$99",
     description: "Perfect for testing your Web3 idea",
     features: [
       "Landing page + basic dApp",
@@ -19,7 +19,7 @@ const packages = [
   },
   {
     name: "Full Product",
-    price: "Starting at $15K",
+    price: "$500+",
     description: "Complete Web3 application",
     features: [
       "Full-featured dApp",
@@ -28,24 +28,24 @@ const packages = [
       "Admin dashboard",
       "4-6 week delivery",
       "3 months support",
-      "Security audit included",
+      "Free security audit",
       "Deployment + DevOps"
     ],
     popular: true
   },
   {
-    name: "Enterprise",
-    price: "Custom",
-    description: "Large-scale blockchain solutions",
+    name: "Custom Support",
+    price: "$1,000+",
+    description: "Ongoing support & mainnet deployment",
     features: [
-      "Complex multi-chain systems",
-      "Custom blockchain infrastructure",
-      "Dedicated team",
-      "Ongoing development",
+      "Mainnet deployment",
+      "Ongoing maintenance",
       "Priority support",
-      "Full audit + compliance",
-      "White-glove service",
-      "SLA guaranteed"
+      "Performance monitoring",
+      "Bug fixes & updates",
+      "Infrastructure management",
+      "Monthly reports",
+      "Dedicated support channel"
     ],
     popular: false
   }
@@ -73,7 +73,7 @@ export default function PricingPage() {
           {packages.map((pkg, index) => (
             <div
               key={index}
-              className={`relative border rounded-2xl p-8 transition-all duration-300 ${
+              className={`relative border rounded-2xl p-8 transition-all duration-300 flex flex-col ${
                 pkg.popular
                   ? 'border-black dark:border-white bg-black/[0.02] dark:bg-white/[0.02]'
                   : 'border-black/[0.08] dark:border-white/[0.08] hover:border-black/20 dark:hover:border-white/20'
@@ -97,7 +97,7 @@ export default function PricingPage() {
                 </p>
               </div>
 
-              <ul className="space-y-3 mb-8">
+              <ul className="space-y-3 mb-8 flex-grow">
                 {pkg.features.map((feature, i) => (
                   <li key={i} className="flex items-start gap-3">
                     <Check className="w-5 h-5 text-black dark:text-white flex-shrink-0 mt-0.5" />

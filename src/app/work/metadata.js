@@ -1,5 +1,5 @@
 export const metadata = {
-  title: "Our Work - Web3 Projects & Blockchain Portfolio | Chainship",
+  title: "Our Works - Web3 Projects & Blockchain Portfolio | Chainship",
   description: "See our Web3 development portfolio: successful dApps, DeFi platforms, NFT marketplaces, and DAO governance systems. Real results from real blockchain projects.",
   keywords: ["Web3 portfolio", "blockchain projects", "dApp examples", "DeFi projects", "NFT marketplace development"],
   openGraph: {

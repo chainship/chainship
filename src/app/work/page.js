@@ -54,7 +54,7 @@ export default function WorkPage() {
         {/* Header */}
         <div className="text-center mb-20">
           <h1 className="text-5xl sm:text-6xl md:text-7xl font-black tracking-tight text-black dark:text-white mb-8">
-            Our Work
+            Our Works
           </h1>
           <p className="text-xl sm:text-2xl text-black/50 dark:text-white/50 max-w-3xl mx-auto font-light">
             Real Web3 projects. Real results. See what we've shipped.

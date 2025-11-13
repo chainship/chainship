@@ -5,7 +5,7 @@ import { Quote, Star } from "lucide-react";
 const testimonials = [
   {
     name: "Alex Chen",
-    role: "Founder, DeFi Protocol",
+    role: "Founder, PHOTON",
     image: "AC",
     content: "Chainship delivered our dApp in record time. Their remote team was incredibly responsive and the quality exceeded our expectations.",
     rating: 5

@@ -61,6 +61,25 @@ const projects = [
     link: "https://spectra-6y41a4tmf-xishs-projects.vercel.app/",
     github: "https://github.com/XD637/spectra",
     layout: "full-width"
+  },
+  {
+    title: "DexTracker",
+    subtitle: "Multi-chain DEX Analytics Platform",
+    metrics: [
+      { value: "2 Chains", label: "Sui & Solana" },
+      { value: "Live Data", label: "Real-time Tracking" },
+      { value: "24/7", label: "Market Monitoring" }
+    ],
+    description: "A DexScreener clone built for Sui and Solana chains. Track trending tokens, analyze trading pairs, monitor liquidity pools, and discover new opportunities. Features real-time price charts, volume tracking, and comprehensive token analytics across multiple blockchain networks.",
+    features: ["Multi-chain Support", "Real-time Charts", "Token Analytics", "Liquidity Tracking", "Trending Pairs", "Advanced Filters"],
+    tech: ["React", "Next.js", "TypeScript", "Sui SDK", "Solana Web3.js", "Chart.js"],
+    image: "/projects/dextracker.png",
+    imageWidth: 1896,
+    imageHeight: 906,
+    logo: false,
+    link: "https://dextracker-seven.vercel.app/",
+    github: "https://github.com/XD637/dex-chart",
+    layout: "full-width"
   }
 ];
 

@@ -131,25 +131,25 @@ export default function PricingPage() {
             <div>
               <h4 className="font-bold text-black dark:text-white mb-2">Smart Contract Audit</h4>
               <p className="text-sm text-black/60 dark:text-white/60 font-light">
-                Third-party security audit — Starting at $3K
+                Third-party security audit — $119
               </p>
             </div>
             <div>
               <h4 className="font-bold text-black dark:text-white mb-2">Extended Support</h4>
               <p className="text-sm text-black/60 dark:text-white/60 font-light">
-                Monthly maintenance package — $1K/month
+                Monthly maintenance package — $49/month
               </p>
             </div>
             <div>
               <h4 className="font-bold text-black dark:text-white mb-2">UI/UX Design</h4>
               <p className="text-sm text-black/60 dark:text-white/60 font-light">
-                Custom design system — Starting at $2K
+                Custom design system — $99
               </p>
             </div>
             <div>
               <h4 className="font-bold text-black dark:text-white mb-2">Tokenomics Consulting</h4>
               <p className="text-sm text-black/60 dark:text-white/60 font-light">
-                Token design & economics — Starting at $2K
+                Token design & economics — $19
               </p>
             </div>
           </div>

@@ -40,7 +40,27 @@ const projects = [
     imageHeight: 600,
     logo: true,
     link: "https://photon-six-flame.vercel.app/",
-    github: "https://github.com/chainship/photon-cp-swap"
+    github: "https://github.com/chainship/photon-cp-swap",
+    layout: "side-by-side"
+  },
+  {
+    title: "Spectra",
+    subtitle: "NFT Analytics & Portfolio Tracker",
+    metrics: [
+      { value: "10K+", label: "Collections Tracked" },
+      { value: "500K+", label: "NFTs Indexed" },
+      { value: "Real-time", label: "Price Updates" }
+    ],
+    description: "NFT analytics platform similar to DexScreener but for NFTs. Track trending collections, monitor your NFT portfolio, view leaderboards, and discover top traders. Real-time floor prices, volume tracking, and comprehensive collection insights.",
+    features: ["Trending NFT Collections", "Portfolio Tracking", "Trader Leaderboards", "Floor Price Alerts", "Volume Analytics", "Collection Rankings"],
+    tech: ["React", "Next.js", "TypeScript", "NFT APIs", "Web3.js"],
+    image: "/projects/spectra.png",
+    imageWidth: 1577,
+    imageHeight: 758,
+    logo: false,
+    link: "https://spectra-6y41a4tmf-xishs-projects.vercel.app/",
+    github: "https://github.com/XD637/spectra",
+    layout: "full-width"
   }
 ];
 
@@ -68,6 +88,127 @@ export default function WorkPage() {
               key={index}
               className="border border-black/[0.08] dark:border-white/[0.08] rounded-2xl overflow-hidden backdrop-blur-sm hover:border-black/20 dark:hover:border-white/20 transition-all"
             >
+              {project.layout === 'full-width' ? (
+                // Full-width layout for wide images
+                <div className="flex flex-col">
+                  {/* Project Header */}
+                  <div className="p-6 sm:p-8 border-b border-black/[0.08] dark:border-white/[0.08]">
+                    <div className="flex flex-wrap items-start justify-between gap-4 mb-4">
+                      <div>
+                        <h3 className="text-3xl sm:text-4xl font-black tracking-tight text-black dark:text-white mb-2">
+                          {project.title}
+                        </h3>
+                        {project.subtitle && (
+                          <p className="text-base text-black/50 dark:text-white/50 font-light">
+                            {project.subtitle}
+                          </p>
+                        )}
+                      </div>
+                      <div className="flex gap-3">
+                        {project.link && (
+                          <a
+                            href={project.link}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="p-3 border border-black/[0.08] dark:border-white/[0.08] rounded-xl hover:border-black/20 dark:hover:border-white/20 hover:scale-105 transition-all"
+                          >
+                            <ExternalLink className="w-5 h-5 text-black dark:text-white" />
+                          </a>
+                        )}
+                        {project.github && (
+                          <a
+                            href={project.github}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="p-3 border border-black/[0.08] dark:border-white/[0.08] rounded-xl hover:border-black/20 dark:hover:border-white/20 hover:scale-105 transition-all"
+                          >
+                            <Github className="w-5 h-5 text-black dark:text-white" />
+                          </a>
+                        )}
+                      </div>
+                    </div>
+
+                    {/* Metrics */}
+                    {project.metrics && (
+                      <div className="grid grid-cols-3 gap-4">
+                        {project.metrics.map((metric, i) => (
+                          <div key={i} className="text-center p-4 border border-black/[0.08] dark:border-white/[0.08] rounded-xl">
+                            <div className="text-2xl sm:text-3xl font-black text-black dark:text-white mb-1">
+                              {metric.value}
+                            </div>
+                            <div className="text-xs text-black/50 dark:text-white/50 font-light">
+                              {metric.label}
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+
+                  {/* Full-width Image */}
+                  <div className="relative w-full bg-black dark:bg-black overflow-hidden">
+                    <Image
+                      src={project.image}
+                      alt={project.title}
+                      width={project.imageWidth || 1577}
+                      height={project.imageHeight || 758}
+                      className="w-full h-auto object-cover"
+                      quality={100}
+                      priority={index === 0}
+                      unoptimized
+                    />
+                  </div>
+
+                  {/* Project Details */}
+                  <div className="p-6 sm:p-8">
+                    {project.description && (
+                      <p className="text-base sm:text-lg text-black/70 dark:text-white/70 leading-relaxed font-light mb-6">
+                        {project.description}
+                      </p>
+                    )}
+
+                    <div className="flex flex-wrap gap-2 mb-6">
+                      {project.tech.map((tech, i) => (
+                        <span
+                          key={i}
+                          className="px-4 py-2 text-sm border border-black/[0.08] dark:border-white/[0.08] rounded-full text-black/70 dark:text-white/70 font-medium"
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+
+                    {/* Features */}
+                    {project.features && (
+                      <div className="mb-6">
+                        <h4 className="text-sm font-bold uppercase tracking-wider text-black/40 dark:text-white/40 mb-3">
+                          Key Features
+                        </h4>
+                        <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
+                          {project.features.map((feature, i) => (
+                            <div key={i} className="flex items-center gap-2 text-sm text-black/70 dark:text-white/70">
+                              <div className="w-1 h-1 rounded-full bg-black dark:bg-white"></div>
+                              {feature}
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    )}
+
+                    {project.link && (
+                      <a 
+                        href={project.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 text-sm font-bold text-black dark:text-white hover:gap-3 transition-all"
+                      >
+                        View Live Project <ArrowRight size={16} />
+                      </a>
+                    )}
+                  </div>
+                </div>
+              ) : (
+                // Side-by-side layout for vertical images
               <div className="grid md:grid-cols-[1.2fr_1fr] gap-0">
                 {/* Project Image */}
                 <div className="relative w-full h-full min-h-[400px] sm:min-h-[500px] md:min-h-[600px] bg-black dark:bg-black overflow-hidden flex items-center justify-center">
@@ -188,6 +329,7 @@ export default function WorkPage() {
                 )}
               </div>
               </div>
+              )}
             </div>
           ))}
         </div>

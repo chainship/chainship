@@ -35,13 +35,13 @@ const projects = [
     description: "A production-ready Solana DEX built with Rust and Anchor. Features constant product AMM, real-time price feeds, portfolio tracking, and comprehensive swap interface. Deployed on Solana Devnet for educational and testing purposes.",
     features: ["Constant Product AMM", "Real-time Price Feeds", "Portfolio Tracking", "Multi-token Support"],
     tech: ["Solana", "Rust", "Anchor", "Next.js", "TypeScript"],
-    image: "/projects/photon-swap.png",
-    imageWidth: 527,
-    imageHeight: 600,
+    image: "/projects/photon-new.png",
+    imageWidth: 1911,
+    imageHeight: 821,
     logo: true,
     link: "https://photon-six-flame.vercel.app/",
     github: "https://github.com/chainship/photon-cp-swap",
-    layout: "side-by-side"
+    layout: "full-width"
   },
   {
     title: "Spectra",

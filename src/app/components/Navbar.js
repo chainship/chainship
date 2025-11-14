@@ -98,7 +98,7 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       {mobileMenuOpen && (
-        <div className="md:hidden border-t border-black/[0.06] dark:border-white/[0.06] bg-white dark:bg-black">
+        <div className="md:hidden absolute left-0 right-0 top-full bg-white dark:bg-black border-t border-black/[0.06] dark:border-white/[0.06] shadow-lg min-h-screen">
           <div className="px-4 py-6 space-y-1">
             <Link 
               href="/" 
@@ -133,7 +133,7 @@ export default function Navbar() {
               className="block w-full text-center py-4 mt-3 bg-black dark:bg-white text-white dark:text-black rounded-full font-semibold tracking-wide"
               onClick={() => setMobileMenuOpen(false)}
             >
-              Get Quote
+              Get A Quote
             </Link>
           </div>
         </div>

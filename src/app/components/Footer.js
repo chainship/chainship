@@ -6,11 +6,11 @@ import { Twitter, Github, Linkedin, Mail, MessageCircle } from "lucide-react";
 export default function Footer() {
   return (
     <footer className="relative w-full bg-white dark:bg-black border-t border-black/10 dark:border-white/10 transition-colors duration-300">
-      <div className="max-w-7xl mx-auto px-6 py-12 sm:py-16">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10 lg:gap-12">
+      <div className="max-w-7xl mx-auto px-6 py-8 sm:py-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
           {/* Brand Column */}
           <div className="sm:col-span-2 lg:col-span-1">
-            <div className="mb-4 flex items-center gap-3">
+            <div className="mb-3 flex items-center gap-3">
               <img 
                 src="/logo.png" 
                 alt="Chainship Logo" 
@@ -20,55 +20,55 @@ export default function Footer() {
                 CHAINSHIP
               </h3>
             </div>
-            <p className="text-black/60 dark:text-white/60 mb-6 max-w-sm">
+            <p className="text-black/60 dark:text-white/60 mb-4 max-w-sm text-sm leading-relaxed">
               Remote-first Web3 development team. We build blockchain applications across EVM, Solana, Sui and emerging chains — smart contracts, dApps, and full-stack integrations.
             </p>
-            <div className="flex gap-3">
+            <div className="flex gap-2">
               <a
                 href="https://twitter.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2.5 rounded-full border border-black/[0.08] dark:border-white/[0.08] hover:bg-black/[0.02] dark:hover:bg-white/[0.02] transition-all text-black dark:text-white"
+                className="p-2 rounded-full border border-black/[0.08] dark:border-white/[0.08] hover:bg-black/[0.02] dark:hover:bg-white/[0.02] transition-all text-black dark:text-white"
                 aria-label="Twitter"
               >
-                <Twitter size={18} />
+                <Twitter size={16} />
               </a>
               <a
                 href="https://github.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2.5 rounded-full border border-black/[0.08] dark:border-white/[0.08] hover:bg-black/[0.02] dark:hover:bg-white/[0.02] transition-all text-black dark:text-white"
+                className="p-2 rounded-full border border-black/[0.08] dark:border-white/[0.08] hover:bg-black/[0.02] dark:hover:bg-white/[0.02] transition-all text-black dark:text-white"
                 aria-label="GitHub"
               >
-                <Github size={18} />
+                <Github size={16} />
               </a>
               <a
                 href="https://linkedin.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2.5 rounded-full border border-black/[0.08] dark:border-white/[0.08] hover:bg-black/[0.02] dark:hover:bg-white/[0.02] transition-all text-black dark:text-white"
+                className="p-2 rounded-full border border-black/[0.08] dark:border-white/[0.08] hover:bg-black/[0.02] dark:hover:bg-white/[0.02] transition-all text-black dark:text-white"
                 aria-label="LinkedIn"
               >
-                <Linkedin size={18} />
+                <Linkedin size={16} />
               </a>
               <a
                 href="https://discord.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2.5 rounded-full border border-black/[0.08] dark:border-white/[0.08] hover:bg-black/[0.02] dark:hover:bg-white/[0.02] transition-all text-black dark:text-white"
+                className="p-2 rounded-full border border-black/[0.08] dark:border-white/[0.08] hover:bg-black/[0.02] dark:hover:bg-white/[0.02] transition-all text-black dark:text-white"
                 aria-label="Discord"
               >
-                <MessageCircle size={18} />
+                <MessageCircle size={16} />
               </a>
             </div>
           </div>
 
           {/* Services Column */}
           <div>
-            <h4 className="text-sm font-bold uppercase tracking-wider text-black dark:text-white mb-4">
+            <h4 className="text-xs font-bold uppercase tracking-wider text-black dark:text-white mb-3">
               Services
             </h4>
-            <ul className="space-y-3">
+            <ul className="space-y-2">
               <li>
                 <Link href="/services" className="text-black/60 dark:text-white/60 hover:text-black dark:hover:text-white transition-colors text-sm">
                   Web3 Development
@@ -94,10 +94,10 @@ export default function Footer() {
 
           {/* Company Column */}
           <div>
-            <h4 className="text-sm font-bold uppercase tracking-wider text-black dark:text-white mb-4">
+            <h4 className="text-xs font-bold uppercase tracking-wider text-black dark:text-white mb-3">
               Company
             </h4>
-            <ul className="space-y-3">
+            <ul className="space-y-2">
               <li>
                 <Link href="/work" className="text-black/60 dark:text-white/60 hover:text-black dark:hover:text-white transition-colors text-sm">
                   Portfolio
@@ -123,10 +123,10 @@ export default function Footer() {
 
           {/* Resources Column */}
           <div>
-            <h4 className="text-sm font-bold uppercase tracking-wider text-black dark:text-white mb-4">
+            <h4 className="text-xs font-bold uppercase tracking-wider text-black dark:text-white mb-3">
               Resources
             </h4>
-            <ul className="space-y-3">
+            <ul className="space-y-2">
               <li>
                 <Link href="/faq" className="text-black/60 dark:text-white/60 hover:text-black dark:hover:text-white transition-colors text-sm">
                   FAQ
@@ -152,7 +152,7 @@ export default function Footer() {
         </div>
 
         {/* Bottom Section */}
-        <div className="mt-12 pt-8 border-t border-black/5 dark:border-white/5">
+        <div className="mt-8 pt-6 border-t border-black/5 dark:border-white/5">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-sm text-black/40 dark:text-white/40">
               © {new Date().getFullYear()} Chainship. All rights reserved. Registered in India.

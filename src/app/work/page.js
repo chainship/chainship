@@ -52,7 +52,7 @@ export default function WorkPage() {
 
       <main className="relative z-10 w-full max-w-6xl mx-auto px-6 pt-32 pb-20">
         {/* Header */}
-        <div className="text-center mb-20">
+        <div className="text-center mb-12 sm:mb-16 lg:mb-20">
           <h1 className="text-5xl sm:text-6xl md:text-7xl font-black tracking-tight text-black dark:text-white mb-8">
             Our Works
           </h1>
@@ -70,7 +70,7 @@ export default function WorkPage() {
             >
               <div className="grid md:grid-cols-[1.2fr_1fr] gap-0">
                 {/* Project Image */}
-                <div className="relative w-full h-full min-h-[500px] md:min-h-[600px] bg-black dark:bg-black overflow-hidden flex items-center justify-center">
+                <div className="relative w-full h-full min-h-[400px] sm:min-h-[500px] md:min-h-[600px] bg-black dark:bg-black overflow-hidden flex items-center justify-center">
                   <Image
                     src={project.image}
                     alt={project.title}
@@ -83,7 +83,7 @@ export default function WorkPage() {
                   />
                 </div>
 
-              <div className="p-8 flex flex-col justify-between">
+              <div className="p-6 sm:p-8 flex flex-col justify-between">
                 <div className="flex flex-wrap items-start justify-between gap-4 mb-6">
                   <div className="flex items-start gap-3">
                     {project.logo && (
@@ -128,7 +128,7 @@ export default function WorkPage() {
 
                 {/* Metrics */}
                 {project.metrics && (
-                  <div className="grid grid-cols-3 gap-4 mb-8">
+                  <div className="grid grid-cols-1 xs:grid-cols-3 gap-4 mb-8">
                     {project.metrics.map((metric, i) => (
                       <div key={i} className="text-center p-4 border border-black/[0.08] dark:border-white/[0.08] rounded-xl">
                         <div className="text-2xl sm:text-3xl font-black text-black dark:text-white mb-1">

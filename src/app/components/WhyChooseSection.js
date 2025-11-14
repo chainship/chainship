@@ -27,9 +27,9 @@ const reasons = [
 
 export default function WhyChooseSection() {
   return (
-    <section className="w-full py-20">
+    <section className="w-full py-16 sm:py-20">
       <div className="max-w-6xl mx-auto px-6">
-      <div className="text-center mb-16">
+      <div className="text-center mb-12 sm:mb-16">
         <h3 className="text-4xl sm:text-5xl md:text-6xl font-black tracking-tight text-black dark:text-white mb-6">
           Why Chainship?
         </h3>
@@ -42,7 +42,7 @@ export default function WhyChooseSection() {
         {reasons.map((reason, index) => (
           <div
             key={index}
-            className="group flex gap-6 p-8 border border-black/[0.08] dark:border-white/[0.08] rounded-2xl backdrop-blur-sm bg-white dark:bg-black hover:border-black/20 dark:hover:border-white/20 transition-all cursor-pointer"
+            className="group flex gap-4 sm:gap-6 p-6 sm:p-8 border border-black/[0.08] dark:border-white/[0.08] rounded-2xl backdrop-blur-sm bg-white dark:bg-black hover:border-black/20 dark:hover:border-white/20 transition-all cursor-pointer"
           >
             <div className="flex-shrink-0">
               <div className="w-14 h-14 rounded-2xl bg-black dark:bg-white flex items-center justify-center transition-colors">

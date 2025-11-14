@@ -55,7 +55,7 @@ export default function ServicesPage() {
 
       <main className="relative z-10 w-full max-w-6xl mx-auto px-6 pt-32 pb-20">
         {/* Header */}
-        <div className="text-center mb-20">
+        <div className="text-center mb-12 sm:mb-16 lg:mb-20">
           <h1 className="text-5xl sm:text-6xl md:text-7xl font-black tracking-tight text-black dark:text-white mb-8">
             Our Services
           </h1>
@@ -69,7 +69,7 @@ export default function ServicesPage() {
           {services.map((service, index) => (
             <div
               key={index}
-              className="border border-black/[0.08] dark:border-white/[0.08] rounded-2xl p-8 backdrop-blur-sm hover:border-black/20 dark:hover:border-white/20 transition-all"
+              className="border border-black/[0.08] dark:border-white/[0.08] rounded-2xl p-6 sm:p-8 backdrop-blur-sm hover:border-black/20 dark:hover:border-white/20 transition-all"
             >
               <div className="flex flex-col md:flex-row gap-6">
                 <div className="flex-shrink-0">

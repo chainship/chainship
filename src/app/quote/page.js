@@ -85,7 +85,7 @@ export default function QuotePage() {
 
       <main className="relative z-10 w-full max-w-4xl mx-auto px-6 pt-32 pb-20">
         {/* Header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-12 sm:mb-16">
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-black/5 dark:bg-white/5 rounded-full mb-6">
             <Zap size={16} className="text-black dark:text-white" />
             <span className="text-sm font-medium text-black dark:text-white">Fast turnaround guaranteed</span>
@@ -99,7 +99,7 @@ export default function QuotePage() {
         </div>
 
         {/* Quote Form */}
-        <div className="border border-black/[0.08] dark:border-white/[0.08] rounded-2xl p-8 md:p-12 backdrop-blur-sm">
+        <div className="border border-black/[0.08] dark:border-white/[0.08] rounded-2xl p-6 sm:p-8 md:p-12 backdrop-blur-sm">
           <form className="space-y-8" onSubmit={handleSubmit}>
             {status.message && (
               <div className="p-4 rounded-lg border border-accent bg-white dark:bg-black text-black dark:text-white flex items-center gap-2">

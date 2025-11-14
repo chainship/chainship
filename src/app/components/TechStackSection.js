@@ -22,9 +22,9 @@ const technologies = [
 
 export default function TechStackSection() {
   return (
-    <section className="w-full py-20">
+    <section className="w-full py-16 sm:py-20">
       <div className="max-w-6xl mx-auto px-6">
-        <div className="text-center mb-16">
+        <div className="text-center mb-12 sm:mb-16">
           <h3 className="text-4xl sm:text-5xl md:text-6xl font-black tracking-tight text-black dark:text-white mb-6">
             Multi-Chain Expertise
           </h3>
@@ -33,11 +33,11 @@ export default function TechStackSection() {
           </p>
         </div>
 
-        <div className="flex flex-wrap justify-center gap-4">
+        <div className="flex flex-wrap justify-center gap-3 sm:gap-4">
           {technologies.map((tech, index) => (
             <div
               key={index}
-              className="group relative px-6 py-3 border border-black/[0.08] dark:border-white/[0.08] rounded-full backdrop-blur-sm bg-white dark:bg-black hover:border-black/20 dark:hover:border-white/20 cursor-default transition-all"
+              className="group relative px-4 sm:px-6 py-2.5 sm:py-3 border border-black/[0.08] dark:border-white/[0.08] rounded-full backdrop-blur-sm bg-white dark:bg-black hover:border-black/20 dark:hover:border-white/20 cursor-default transition-all"
             >
               <span className="text-sm font-semibold text-black dark:text-white transition-colors">
                 {tech.name}

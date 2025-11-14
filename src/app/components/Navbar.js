@@ -33,7 +33,7 @@ export default function Navbar() {
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 border-b border-black/[0.06] dark:border-white/[0.06] bg-white/90 backdrop-blur-xl dark:bg-black/90 transition-colors duration-300 shadow-sm shadow-black/5 dark:shadow-white/5">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-3 flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-3 sm:py-3.5 flex items-center justify-between">
         <Link href="/" className="flex items-center gap-3 hover:opacity-80 transition-opacity">
           <img 
             src="/logo.png" 
@@ -81,14 +81,14 @@ export default function Navbar() {
           </button> */}
           <button
             onClick={toggleTheme}
-            className="p-2 rounded-full border border-accent hover:shadow-accent transition-all text-black dark:text-white"
+            className="p-2.5 rounded-full border border-accent hover:shadow-accent transition-all text-black dark:text-white"
             aria-label="Toggle theme"
           >
             {isDark ? <Sun size={18} /> : <Moon size={18} />}
           </button>
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="p-2 text-black dark:text-white"
+            className="p-2.5 text-black dark:text-white"
             aria-label="Toggle menu"
           >
             {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}

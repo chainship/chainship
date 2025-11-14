@@ -6,10 +6,10 @@ import { Twitter, Github, Linkedin, Mail, MessageCircle } from "lucide-react";
 export default function Footer() {
   return (
     <footer className="relative w-full bg-white dark:bg-black border-t border-black/10 dark:border-white/10 transition-colors duration-300">
-      <div className="max-w-7xl mx-auto px-6 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+      <div className="max-w-7xl mx-auto px-6 py-12 sm:py-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10 lg:gap-12">
           {/* Brand Column */}
-          <div className="lg:col-span-1">
+          <div className="sm:col-span-2 lg:col-span-1">
             <div className="mb-4 flex items-center gap-3">
               <img 
                 src="/logo.png" 

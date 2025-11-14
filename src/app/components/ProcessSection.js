@@ -31,9 +31,9 @@ const steps = [
 
 export default function ProcessSection() {
   return (
-    <section className="w-full py-20">
+    <section className="w-full py-16 sm:py-20">
       <div className="max-w-6xl mx-auto px-6">
-      <div className="text-center mb-16">
+      <div className="text-center mb-12 sm:mb-16">
         <h3 className="text-4xl sm:text-5xl md:text-6xl font-black tracking-tight text-black dark:text-white mb-6">
           How We Work
         </h3>

@@ -59,7 +59,7 @@ export default function PricingPage() {
 
       <main className="relative z-10 w-full max-w-7xl mx-auto px-6 pt-32 pb-20">
         {/* Header */}
-        <div className="text-center mb-20">
+        <div className="text-center mb-12 sm:mb-16 lg:mb-20">
           <h1 className="text-5xl sm:text-6xl md:text-7xl font-black tracking-tight text-black dark:text-white mb-8">
             Transparent Pricing
           </h1>
@@ -69,7 +69,7 @@ export default function PricingPage() {
         </div>
 
         {/* Pricing Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
           {packages.map((pkg, index) => (
             <div
               key={index}

@@ -65,9 +65,9 @@ function CountUpAnimation({ value, suffix }) {
 
 export default function StatsSection() {
   return (
-    <section className="w-full py-20">
+    <section className="w-full py-16 sm:py-20">
       <div className="max-w-6xl mx-auto px-6">
-        <div className="text-center mb-16">
+        <div className="text-center mb-12 sm:mb-16">
           <h3 className="text-4xl sm:text-5xl md:text-6xl font-black tracking-tight text-black dark:text-white mb-6">
             Proven Track Record
           </h3>
@@ -76,7 +76,7 @@ export default function StatsSection() {
           </p>
         </div>
 
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 md:gap-12">
           {stats.map((stat, index) => (
             <div
               key={index}

@@ -44,7 +44,7 @@ export default function Home() {
       
       <main className="relative z-10 flex w-full flex-col items-center">
         {/* Hero Container */}
-        <div className="flex w-full max-w-6xl flex-col items-center px-6 pt-40 pb-32 text-center">
+        <div className="flex w-full max-w-6xl flex-col items-center px-6 pt-28 sm:pt-32 md:pt-40 pb-20 sm:pb-24 md:pb-32 text-center">
           {/* Hero Section */}
           <div className="flex flex-col items-center gap-8 max-w-4xl relative mb-12">
             {/* Animated Badge */}
@@ -55,7 +55,7 @@ export default function Home() {
               </span>
             </div>
 
-            <h1 className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-black leading-[0.9] tracking-[-0.02em] text-black dark:text-white">
+            <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-black leading-[0.9] tracking-[-0.02em] text-black dark:text-white">
               <span className="inline-block">
                 Remote-First
               </span>
@@ -64,7 +64,7 @@ export default function Home() {
                 <span className="bg-gradient-to-r from-black/80 via-black to-black/80 dark:from-white/80 dark:via-white dark:to-white/80 bg-clip-text text-transparent">Web3 Builders</span>
               </span>
             </h1>
-            <p className="text-2xl sm:text-3xl md:text-4xl text-black/40 dark:text-white/40 leading-snug max-w-4xl font-light tracking-tight">
+            <p className="text-xl sm:text-2xl md:text-3xl lg:text-4xl text-black/40 dark:text-white/40 leading-snug max-w-4xl font-light tracking-tight">
               We build your <span className="text-black dark:text-white font-normal">Web3 vision</span> across EVM, Solana, Sui & beyond.
             </p>
             {/* Feature Pills */}

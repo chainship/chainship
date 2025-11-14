@@ -41,7 +41,7 @@ export default function ProcessPage() {
 
       <main className="relative z-10 w-full max-w-6xl mx-auto px-6 pt-32 pb-20">
         {/* Header */}
-        <div className="text-center mb-20">
+        <div className="text-center mb-12 sm:mb-16 lg:mb-20">
           <h1 className="text-5xl sm:text-6xl md:text-7xl font-black tracking-tight text-black dark:text-white mb-8">
             Our Process
           </h1>
@@ -55,7 +55,7 @@ export default function ProcessPage() {
           {steps.map((step, index) => (
             <div
               key={index}
-              className="group border border-black/[0.08] dark:border-white/[0.08] rounded-2xl p-8 md:p-12 hover:border-black/20 dark:hover:border-white/20 transition-all duration-300"
+              className="group border border-black/[0.08] dark:border-white/[0.08] rounded-2xl p-6 sm:p-8 md:p-12 hover:border-black/20 dark:hover:border-white/20 transition-all duration-300"
             >
               <div className="flex flex-col md:flex-row gap-8">
                 {/* Left side - Number & Icon */}

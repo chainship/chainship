@@ -138,7 +138,6 @@ export default function ContactPage() {
                 className="w-full px-8 py-4 bg-black dark:bg-white text-white dark:text-black rounded-lg font-semibold hover:scale-[1.02] transition-transform flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed shadow-lg shadow-black/10 dark:shadow-white/10"
               >
                 {loading ? "Sending..." : "Send Message"}
-                <Send size={18} />
               </button>
             </form>
           </div>

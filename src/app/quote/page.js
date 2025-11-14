@@ -1,7 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import { Zap, Send, CheckCircle, AlertCircle } from "lucide-react";
+import { Zap, Send, CheckCircle, AlertCircle, ChevronDown, Check } from "lucide-react";
+import * as Select from "@radix-ui/react-select";
 
 export default function QuotePage() {
   const [formData, setFormData] = useState({
@@ -30,6 +31,10 @@ export default function QuotePage() {
     } else {
       setFormData({ ...formData, [name]: value });
     }
+  };
+
+  const handleSelectChange = (name, value) => {
+    setFormData({ ...formData, [name]: value });
   };
 
   const handleSubmit = async (e) => {
@@ -102,7 +107,7 @@ export default function QuotePage() {
         <div className="border border-black/[0.08] dark:border-white/[0.08] rounded-2xl p-6 sm:p-8 md:p-12 backdrop-blur-sm">
           <form className="space-y-8" onSubmit={handleSubmit}>
             {status.message && (
-              <div className="p-4 rounded-lg border border-accent bg-white dark:bg-black text-black dark:text-white flex items-center gap-2">
+              <div className="p-4 rounded-lg border border-black/[0.08] dark:border-white/[0.08] bg-black/[0.02] dark:bg-white/[0.02] text-black dark:text-white flex items-center gap-2">
                 {status.type === "success" ? (
                   <CheckCircle size={20} className="text-accent flex-shrink-0" />
                 ) : (
@@ -125,7 +130,7 @@ export default function QuotePage() {
                   value={formData.name}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 border border-accent rounded-lg bg-white dark:bg-black text-black dark:text-white focus:outline-none focus:shadow-accent transition-all"
+                  className="w-full px-4 py-3 border border-black/[0.08] dark:border-white/[0.08] rounded-lg bg-white dark:bg-black text-black dark:text-white focus:outline-none focus:border-black/20 dark:focus:border-white/20 transition-all"
                   placeholder="Your name"
                 />
               </div>
@@ -141,7 +146,7 @@ export default function QuotePage() {
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 border border-accent rounded-lg bg-white dark:bg-black text-black dark:text-white focus:outline-none focus:shadow-accent transition-all"
+                  className="w-full px-4 py-3 border border-black/[0.08] dark:border-white/[0.08] rounded-lg bg-white dark:bg-black text-black dark:text-white focus:outline-none focus:border-black/20 dark:focus:border-white/20 transition-all"
                   placeholder="your@email.com"
                 />
               </div>
@@ -158,7 +163,7 @@ export default function QuotePage() {
                   name="company"
                   value={formData.company}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 border border-accent rounded-lg bg-white dark:bg-black text-black dark:text-white focus:outline-none focus:shadow-accent transition-all"
+                  className="w-full px-4 py-3 border border-black/[0.08] dark:border-white/[0.08] rounded-lg bg-white dark:bg-black text-black dark:text-white focus:outline-none focus:border-black/20 dark:focus:border-white/20 transition-all"
                   placeholder="Your company"
                 />
               </div>
@@ -171,7 +176,7 @@ export default function QuotePage() {
                   type="text"
                   id="telegram"
                   name="telegram"
-                  className="w-full px-4 py-3 border border-accent rounded-lg bg-white dark:bg-black text-black dark:text-white focus:outline-none focus:shadow-accent transition-all"
+                  className="w-full px-4 py-3 border border-black/[0.08] dark:border-white/[0.08] rounded-lg bg-white dark:bg-black text-black dark:text-white focus:outline-none focus:border-black/20 dark:focus:border-white/20 transition-all"
                   placeholder="@yourusername"
                 />
               </div>
@@ -182,24 +187,74 @@ export default function QuotePage() {
               <label htmlFor="projectType" className="block text-sm font-medium text-black dark:text-white mb-2">
                 Project Type *
               </label>
-              <select
-                id="projectType"
-                name="projectType"
-                value={formData.projectType}
-                onChange={handleChange}
-                required
-                className="w-full px-4 py-3 border border-accent rounded-lg bg-white dark:bg-black text-black dark:text-white focus:outline-none focus:shadow-accent transition-all"
-              >
-                <option value="">Select project type</option>
-                <option value="web3-app">Web3 Application</option>
-                <option value="smart-contract">Smart Contract Development</option>
-                <option value="dapp">dApp Development</option>
-                <option value="nft">NFT Platform/Marketplace</option>
-                <option value="token">Token Launch & Integration</option>
-                <option value="landing">Landing Page/Website</option>
-                <option value="dao">DAO Platform</option>
-                <option value="other">Other</option>
-              </select>
+              <Select.Root value={formData.projectType} onValueChange={(value) => handleSelectChange('projectType', value)} required>
+                <Select.Trigger className="w-full px-4 py-3 border border-black/[0.08] dark:border-white/[0.08] rounded-lg bg-white dark:bg-black text-black dark:text-white focus:outline-none focus:border-black/20 dark:focus:border-white/20 transition-all flex items-center justify-between hover:border-black/20 dark:hover:border-white/20">
+                  <Select.Value placeholder="Select project type" />
+                  <Select.Icon>
+                    <ChevronDown className="w-4 h-4" />
+                  </Select.Icon>
+                </Select.Trigger>
+                <Select.Portal>
+                  <Select.Content className="overflow-hidden bg-white dark:bg-black border border-black/[0.08] dark:border-white/[0.08] rounded-lg shadow-lg z-50">
+                    <Select.Viewport className="p-1">
+                      <Select.Item value="dex" className="relative flex items-center px-8 py-2.5 text-sm text-black dark:text-white rounded cursor-pointer hover:bg-black/[0.05] dark:hover:bg-white/[0.05] focus:bg-black/[0.05] dark:focus:bg-white/[0.05] outline-none">
+                        <Select.ItemIndicator className="absolute left-2">
+                          <Check className="w-4 h-4" />
+                        </Select.ItemIndicator>
+                        <Select.ItemText>DEX / AMM Platform</Select.ItemText>
+                      </Select.Item>
+                      <Select.Item value="dapp" className="relative flex items-center px-8 py-2.5 text-sm text-black dark:text-white rounded cursor-pointer hover:bg-black/[0.05] dark:hover:bg-white/[0.05] focus:bg-black/[0.05] dark:focus:bg-white/[0.05] outline-none">
+                        <Select.ItemIndicator className="absolute left-2">
+                          <Check className="w-4 h-4" />
+                        </Select.ItemIndicator>
+                        <Select.ItemText>dApp Development</Select.ItemText>
+                      </Select.Item>
+                      <Select.Item value="nft-analytics" className="relative flex items-center px-8 py-2.5 text-sm text-black dark:text-white rounded cursor-pointer hover:bg-black/[0.05] dark:hover:bg-white/[0.05] focus:bg-black/[0.05] dark:focus:bg-white/[0.05] outline-none">
+                        <Select.ItemIndicator className="absolute left-2">
+                          <Check className="w-4 h-4" />
+                        </Select.ItemIndicator>
+                        <Select.ItemText>NFT Analytics Platform</Select.ItemText>
+                      </Select.Item>
+                      <Select.Item value="nft-marketplace" className="relative flex items-center px-8 py-2.5 text-sm text-black dark:text-white rounded cursor-pointer hover:bg-black/[0.05] dark:hover:bg-white/[0.05] focus:bg-black/[0.05] dark:focus:bg-white/[0.05] outline-none">
+                        <Select.ItemIndicator className="absolute left-2">
+                          <Check className="w-4 h-4" />
+                        </Select.ItemIndicator>
+                        <Select.ItemText>NFT Marketplace</Select.ItemText>
+                      </Select.Item>
+                      <Select.Item value="smart-contract" className="relative flex items-center px-8 py-2.5 text-sm text-black dark:text-white rounded cursor-pointer hover:bg-black/[0.05] dark:hover:bg-white/[0.05] focus:bg-black/[0.05] dark:focus:bg-white/[0.05] outline-none">
+                        <Select.ItemIndicator className="absolute left-2">
+                          <Check className="w-4 h-4" />
+                        </Select.ItemIndicator>
+                        <Select.ItemText>Smart Contract Development</Select.ItemText>
+                      </Select.Item>
+                      <Select.Item value="token" className="relative flex items-center px-8 py-2.5 text-sm text-black dark:text-white rounded cursor-pointer hover:bg-black/[0.05] dark:hover:bg-white/[0.05] focus:bg-black/[0.05] dark:focus:bg-white/[0.05] outline-none">
+                        <Select.ItemIndicator className="absolute left-2">
+                          <Check className="w-4 h-4" />
+                        </Select.ItemIndicator>
+                        <Select.ItemText>Token Launch & Integration</Select.ItemText>
+                      </Select.Item>
+                      <Select.Item value="dao" className="relative flex items-center px-8 py-2.5 text-sm text-black dark:text-white rounded cursor-pointer hover:bg-black/[0.05] dark:hover:bg-white/[0.05] focus:bg-black/[0.05] dark:focus:bg-white/[0.05] outline-none">
+                        <Select.ItemIndicator className="absolute left-2">
+                          <Check className="w-4 h-4" />
+                        </Select.ItemIndicator>
+                        <Select.ItemText>DAO Platform</Select.ItemText>
+                      </Select.Item>
+                      <Select.Item value="landing" className="relative flex items-center px-8 py-2.5 text-sm text-black dark:text-white rounded cursor-pointer hover:bg-black/[0.05] dark:hover:bg-white/[0.05] focus:bg-black/[0.05] dark:focus:bg-white/[0.05] outline-none">
+                        <Select.ItemIndicator className="absolute left-2">
+                          <Check className="w-4 h-4" />
+                        </Select.ItemIndicator>
+                        <Select.ItemText>Landing Page/Website</Select.ItemText>
+                      </Select.Item>
+                      <Select.Item value="other" className="relative flex items-center px-8 py-2.5 text-sm text-black dark:text-white rounded cursor-pointer hover:bg-black/[0.05] dark:hover:bg-white/[0.05] focus:bg-black/[0.05] dark:focus:bg-white/[0.05] outline-none">
+                        <Select.ItemIndicator className="absolute left-2">
+                          <Check className="w-4 h-4" />
+                        </Select.ItemIndicator>
+                        <Select.ItemText>Other</Select.ItemText>
+                      </Select.Item>
+                    </Select.Viewport>
+                  </Select.Content>
+                </Select.Portal>
+              </Select.Root>
             </div>
 
             {/* Budget Range */}
@@ -207,22 +262,50 @@ export default function QuotePage() {
               <label htmlFor="budget" className="block text-sm font-medium text-black dark:text-white mb-2">
                 Budget Range *
               </label>
-              <select
-                id="budget"
-                name="budget"
-                value={formData.budget}
-                onChange={handleChange}
-                required
-                className="w-full px-4 py-3 border border-accent rounded-lg bg-white dark:bg-black text-black dark:text-white focus:outline-none focus:shadow-accent transition-all"
-              >
-                <option value="">Select budget range</option>
-                <option value="5k-10k">$5K - $10K</option>
-                <option value="10k-25k">$10K - $25K</option>
-                <option value="25k-50k">$25K - $50K</option>
-                <option value="50k-100k">$50K - $100K</option>
-                <option value="100k+">$100K+</option>
-                <option value="not-sure">Not sure yet</option>
-              </select>
+              <Select.Root value={formData.budget} onValueChange={(value) => handleSelectChange('budget', value)} required>
+                <Select.Trigger className="w-full px-4 py-3 border border-black/[0.08] dark:border-white/[0.08] rounded-lg bg-white dark:bg-black text-black dark:text-white focus:outline-none focus:border-black/20 dark:focus:border-white/20 transition-all flex items-center justify-between hover:border-black/20 dark:hover:border-white/20">
+                  <Select.Value placeholder="Select budget range" />
+                  <Select.Icon>
+                    <ChevronDown className="w-4 h-4" />
+                  </Select.Icon>
+                </Select.Trigger>
+                <Select.Portal>
+                  <Select.Content className="overflow-hidden bg-white dark:bg-black border border-black/[0.08] dark:border-white/[0.08] rounded-lg shadow-lg z-50">
+                    <Select.Viewport className="p-1">
+                      <Select.Item value="mvp-99" className="relative flex items-center px-8 py-2.5 text-sm text-black dark:text-white rounded cursor-pointer hover:bg-black/[0.05] dark:hover:bg-white/[0.05] focus:bg-black/[0.05] dark:focus:bg-white/[0.05] outline-none">
+                        <Select.ItemIndicator className="absolute left-2">
+                          <Check className="w-4 h-4" />
+                        </Select.ItemIndicator>
+                        <Select.ItemText>MVP Launch — $99</Select.ItemText>
+                      </Select.Item>
+                      <Select.Item value="full-500" className="relative flex items-center px-8 py-2.5 text-sm text-black dark:text-white rounded cursor-pointer hover:bg-black/[0.05] dark:hover:bg-white/[0.05] focus:bg-black/[0.05] dark:focus:bg-white/[0.05] outline-none">
+                        <Select.ItemIndicator className="absolute left-2">
+                          <Check className="w-4 h-4" />
+                        </Select.ItemIndicator>
+                        <Select.ItemText>Full Product — $500+</Select.ItemText>
+                      </Select.Item>
+                      <Select.Item value="custom-1000" className="relative flex items-center px-8 py-2.5 text-sm text-black dark:text-white rounded cursor-pointer hover:bg-black/[0.05] dark:hover:bg-white/[0.05] focus:bg-black/[0.05] dark:focus:bg-white/[0.05] outline-none">
+                        <Select.ItemIndicator className="absolute left-2">
+                          <Check className="w-4 h-4" />
+                        </Select.ItemIndicator>
+                        <Select.ItemText>Custom Support — $1,000+</Select.ItemText>
+                      </Select.Item>
+                      <Select.Item value="enterprise" className="relative flex items-center px-8 py-2.5 text-sm text-black dark:text-white rounded cursor-pointer hover:bg-black/[0.05] dark:hover:bg-white/[0.05] focus:bg-black/[0.05] dark:focus:bg-white/[0.05] outline-none">
+                        <Select.ItemIndicator className="absolute left-2">
+                          <Check className="w-4 h-4" />
+                        </Select.ItemIndicator>
+                        <Select.ItemText>Enterprise (Custom Quote)</Select.ItemText>
+                      </Select.Item>
+                      <Select.Item value="not-sure" className="relative flex items-center px-8 py-2.5 text-sm text-black dark:text-white rounded cursor-pointer hover:bg-black/[0.05] dark:hover:bg-white/[0.05] focus:bg-black/[0.05] dark:focus:bg-white/[0.05] outline-none">
+                        <Select.ItemIndicator className="absolute left-2">
+                          <Check className="w-4 h-4" />
+                        </Select.ItemIndicator>
+                        <Select.ItemText>Not sure yet</Select.ItemText>
+                      </Select.Item>
+                    </Select.Viewport>
+                  </Select.Content>
+                </Select.Portal>
+              </Select.Root>
             </div>
 
             {/* Timeline */}
@@ -230,21 +313,50 @@ export default function QuotePage() {
               <label htmlFor="timeline" className="block text-sm font-medium text-black dark:text-white mb-2">
                 Timeline *
               </label>
-              <select
-                id="timeline"
-                name="timeline"
-                value={formData.timeline}
-                onChange={handleChange}
-                required
-                className="w-full px-4 py-3 border border-accent rounded-lg bg-white dark:bg-black text-black dark:text-white focus:outline-none focus:shadow-accent transition-all"
-              >
-                <option value="">Select timeline</option>
-                <option value="urgent">ASAP (1-2 weeks)</option>
-                <option value="1-month">1 Month</option>
-                <option value="2-3-months">2-3 Months</option>
-                <option value="3-6-months">3-6 Months</option>
-                <option value="flexible">Flexible</option>
-              </select>
+              <Select.Root value={formData.timeline} onValueChange={(value) => handleSelectChange('timeline', value)} required>
+                <Select.Trigger className="w-full px-4 py-3 border border-black/[0.08] dark:border-white/[0.08] rounded-lg bg-white dark:bg-black text-black dark:text-white focus:outline-none focus:border-black/20 dark:focus:border-white/20 transition-all flex items-center justify-between hover:border-black/20 dark:hover:border-white/20">
+                  <Select.Value placeholder="Select timeline" />
+                  <Select.Icon>
+                    <ChevronDown className="w-4 h-4" />
+                  </Select.Icon>
+                </Select.Trigger>
+                <Select.Portal>
+                  <Select.Content className="overflow-hidden bg-white dark:bg-black border border-black/[0.08] dark:border-white/[0.08] rounded-lg shadow-lg z-50">
+                    <Select.Viewport className="p-1">
+                      <Select.Item value="2-3-weeks" className="relative flex items-center px-8 py-2.5 text-sm text-black dark:text-white rounded cursor-pointer hover:bg-black/[0.05] dark:hover:bg-white/[0.05] focus:bg-black/[0.05] dark:focus:bg-white/[0.05] outline-none">
+                        <Select.ItemIndicator className="absolute left-2">
+                          <Check className="w-4 h-4" />
+                        </Select.ItemIndicator>
+                        <Select.ItemText>2-3 weeks (MVP Launch)</Select.ItemText>
+                      </Select.Item>
+                      <Select.Item value="4-6-weeks" className="relative flex items-center px-8 py-2.5 text-sm text-black dark:text-white rounded cursor-pointer hover:bg-black/[0.05] dark:hover:bg-white/[0.05] focus:bg-black/[0.05] dark:focus:bg-white/[0.05] outline-none">
+                        <Select.ItemIndicator className="absolute left-2">
+                          <Check className="w-4 h-4" />
+                        </Select.ItemIndicator>
+                        <Select.ItemText>4-6 weeks (Full Product)</Select.ItemText>
+                      </Select.Item>
+                      <Select.Item value="2-3-months" className="relative flex items-center px-8 py-2.5 text-sm text-black dark:text-white rounded cursor-pointer hover:bg-black/[0.05] dark:hover:bg-white/[0.05] focus:bg-black/[0.05] dark:focus:bg-white/[0.05] outline-none">
+                        <Select.ItemIndicator className="absolute left-2">
+                          <Check className="w-4 h-4" />
+                        </Select.ItemIndicator>
+                        <Select.ItemText>2-3 Months</Select.ItemText>
+                      </Select.Item>
+                      <Select.Item value="3-6-months" className="relative flex items-center px-8 py-2.5 text-sm text-black dark:text-white rounded cursor-pointer hover:bg-black/[0.05] dark:hover:bg-white/[0.05] focus:bg-black/[0.05] dark:focus:bg-white/[0.05] outline-none">
+                        <Select.ItemIndicator className="absolute left-2">
+                          <Check className="w-4 h-4" />
+                        </Select.ItemIndicator>
+                        <Select.ItemText>3-6 Months</Select.ItemText>
+                      </Select.Item>
+                      <Select.Item value="flexible" className="relative flex items-center px-8 py-2.5 text-sm text-black dark:text-white rounded cursor-pointer hover:bg-black/[0.05] dark:hover:bg-white/[0.05] focus:bg-black/[0.05] dark:focus:bg-white/[0.05] outline-none">
+                        <Select.ItemIndicator className="absolute left-2">
+                          <Check className="w-4 h-4" />
+                        </Select.ItemIndicator>
+                        <Select.ItemText>Flexible</Select.ItemText>
+                      </Select.Item>
+                    </Select.Viewport>
+                  </Select.Content>
+                </Select.Portal>
+              </Select.Root>
             </div>
 
             {/* Project Description */}
@@ -259,7 +371,7 @@ export default function QuotePage() {
                 onChange={handleChange}
                 required
                 rows={6}
-                className="w-full px-4 py-3 border border-accent rounded-lg bg-white dark:bg-black text-black dark:text-white focus:outline-none focus:shadow-accent transition-all resize-none"
+                className="w-full px-4 py-3 border border-black/[0.08] dark:border-white/[0.08] rounded-lg bg-white dark:bg-black text-black dark:text-white focus:outline-none focus:border-black/20 dark:focus:border-white/20 transition-all resize-none"
                 placeholder="Tell us about your project: What are you building? What's the main goal? Any specific features or requirements?"
               />
             </div>
@@ -270,17 +382,17 @@ export default function QuotePage() {
                 Blockchain/Network (select all that apply)
               </label>
               <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
-                {['Ethereum', 'Polygon', 'BSC', 'Solana', 'Arbitrum', 'Optimism', 'Base', 'Other'].map((chain) => (
-                  <label key={chain} className="flex items-center gap-2 cursor-pointer">
+                {['Solana', 'Sui', 'Ethereum', 'Polygon', 'BSC', 'Arbitrum', 'Base', 'Avalanche', 'Other'].map((chain) => (
+                  <label key={chain} className="flex items-center gap-2.5 cursor-pointer group">
                     <input
                       type="checkbox"
                       name="blockchain"
                       value={chain.toLowerCase()}
                       checked={formData.blockchain.includes(chain.toLowerCase())}
                       onChange={handleChange}
-                      className="w-4 h-4 rounded border-black/20 dark:border-white/20"
+                      className="w-4 h-4 rounded border-2 border-black/[0.08] dark:border-white/[0.08] checked:bg-black dark:checked:bg-white checked:border-black dark:checked:border-white transition-all cursor-pointer"
                     />
-                    <span className="text-sm text-black dark:text-white">{chain}</span>
+                    <span className="text-sm text-black/70 dark:text-white/70 group-hover:text-black dark:group-hover:text-white transition-colors">{chain}</span>
                   </label>
                 ))}
               </div>
@@ -292,10 +404,9 @@ export default function QuotePage() {
             <button
               type="submit"
               disabled={loading}
-              className="w-full px-8 py-4 bg-black dark:bg-white text-white dark:text-black rounded-lg font-semibold text-lg hover:scale-[1.02] transition-transform flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed shadow-lg shadow-black/10 dark:shadow-white/10"
+              className="w-full px-8 py-4 bg-black dark:bg-white text-white dark:text-black rounded-full font-bold text-base hover:scale-[1.02] transition-transform flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed shadow-lg shadow-black/10 dark:shadow-white/10"
             >
               {loading ? "Submitting..." : "Get Your Free Quote"}
-              <Send size={20} />
             </button>
 
             <p className="text-sm text-center text-black/40 dark:text-white/40">

@@ -48,8 +48,10 @@ export default function Navbar() {
         {/* Desktop Menu */}
         <div className="hidden md:flex items-center gap-8 lg:gap-10 text-sm font-medium text-black/60 dark:text-white/60">
           <Link href="/" className="hover:text-black dark:hover:text-white transition-colors tracking-wide">Home</Link>
+          <Link href="/about" className="hover:text-black dark:hover:text-white transition-colors tracking-wide">About</Link>
           <Link href="/work" className="hover:text-black dark:hover:text-white transition-colors tracking-wide">Works</Link>
-          <Link href="/pricing" className="hover:text-black dark:hover:text-white transition-colors tracking-wide">Pricing</Link>
+          <Link href="/blog" className="hover:text-black dark:hover:text-white transition-colors tracking-wide">Blog</Link>
+          <Link href="/resources" className="hover:text-black dark:hover:text-white transition-colors tracking-wide">Resources</Link>
           <Link href="/contact" className="hover:text-black dark:hover:text-white transition-colors tracking-wide">Contact</Link>
           <Link href="/quote" className="px-6 py-2.5 bg-black dark:bg-white text-white dark:text-black rounded-full hover:scale-[1.02] transition-transform text-sm font-semibold tracking-wide">Get Quote</Link>
           {/* <button
@@ -108,6 +110,13 @@ export default function Navbar() {
               Home
             </Link>
             <Link 
+              href="/about" 
+              className="block py-3 px-4 text-base font-medium text-black dark:text-white hover:bg-black/[0.02] dark:hover:bg-white/[0.02] transition-colors rounded-lg"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              About
+            </Link>
+            <Link 
               href="/work" 
               className="block py-3 px-4 text-base font-medium text-black dark:text-white hover:bg-black/[0.02] dark:hover:bg-white/[0.02] transition-colors rounded-lg"
               onClick={() => setMobileMenuOpen(false)}
@@ -115,11 +124,18 @@ export default function Navbar() {
               Works
             </Link>
             <Link 
-              href="/pricing" 
+              href="/blog" 
               className="block py-3 px-4 text-base font-medium text-black dark:text-white hover:bg-black/[0.02] dark:hover:bg-white/[0.02] transition-colors rounded-lg"
               onClick={() => setMobileMenuOpen(false)}
             >
-              Pricing
+              Blog
+            </Link>
+            <Link 
+              href="/resources" 
+              className="block py-3 px-4 text-base font-medium text-black dark:text-white hover:bg-black/[0.02] dark:hover:bg-white/[0.02] transition-colors rounded-lg"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              Resources
             </Link>
             <Link 
               href="/contact" 

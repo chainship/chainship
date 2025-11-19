@@ -70,12 +70,12 @@ export default function Footer() {
             </h4>
             <ul className="space-y-2">
               <li>
-                <Link href="/services" className="text-black/60 dark:text-white/60 hover:text-black dark:hover:text-white transition-colors text-sm">
-                  Web3 Development
+                <Link href="/services/solana-development" className="text-black/60 dark:text-white/60 hover:text-black dark:hover:text-white transition-colors text-sm">
+                  Solana Development
                 </Link>
               </li>
               <li>
-                <Link href="/services" className="text-black/60 dark:text-white/60 hover:text-black dark:hover:text-white transition-colors text-sm">
+                <Link href="/services/smart-contracts" className="text-black/60 dark:text-white/60 hover:text-black dark:hover:text-white transition-colors text-sm">
                   Smart Contracts
                 </Link>
               </li>
@@ -86,7 +86,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link href="/services" className="text-black/60 dark:text-white/60 hover:text-black dark:hover:text-white transition-colors text-sm">
-                  Blockchain Consulting
+                  DeFi Protocols
                 </Link>
               </li>
             </ul>
@@ -99,18 +99,18 @@ export default function Footer() {
             </h4>
             <ul className="space-y-2">
               <li>
+                <Link href="/about" className="text-black/60 dark:text-white/60 hover:text-black dark:hover:text-white transition-colors text-sm">
+                  About Us
+                </Link>
+              </li>
+              <li>
                 <Link href="/work" className="text-black/60 dark:text-white/60 hover:text-black dark:hover:text-white transition-colors text-sm">
                   Portfolio
                 </Link>
               </li>
               <li>
-                <Link href="/process" className="text-black/60 dark:text-white/60 hover:text-black dark:hover:text-white transition-colors text-sm">
-                  Our Process
-                </Link>
-              </li>
-              <li>
-                <Link href="/pricing" className="text-black/60 dark:text-white/60 hover:text-black dark:hover:text-white transition-colors text-sm">
-                  Pricing
+                <Link href="/blog" className="text-black/60 dark:text-white/60 hover:text-black dark:hover:text-white transition-colors text-sm">
+                  Blog
                 </Link>
               </li>
               <li>
@@ -128,6 +128,11 @@ export default function Footer() {
             </h4>
             <ul className="space-y-2">
               <li>
+                <Link href="/resources" className="text-black/60 dark:text-white/60 hover:text-black dark:hover:text-white transition-colors text-sm">
+                  Free Downloads
+                </Link>
+              </li>
+              <li>
                 <Link href="/faq" className="text-black/60 dark:text-white/60 hover:text-black dark:hover:text-white transition-colors text-sm">
                   FAQ
                 </Link>
@@ -138,13 +143,8 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/terms" className="text-black/60 dark:text-white/60 hover:text-black dark:hover:text-white transition-colors text-sm">
-                  Terms
-                </Link>
-              </li>
-              <li>
-                <Link href="/privacy" className="text-black/60 dark:text-white/60 hover:text-black dark:hover:text-white transition-colors text-sm">
-                  Privacy
+                <Link href="/pricing" className="text-black/60 dark:text-white/60 hover:text-black dark:hover:text-white transition-colors text-sm">
+                  Pricing
                 </Link>
               </li>
             </ul>

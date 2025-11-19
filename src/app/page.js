@@ -10,6 +10,7 @@ import TestimonialsSection from "./components/TestimonialsSection";
 import TechStackSection from "./components/TechStackSection";
 import FAQSection from "./components/FAQSection";
 import FloatingParticles from "./components/FloatingParticles";
+import NewsletterSignup from "./components/NewsletterSignup";
 
 export default function Home() {
   return (
@@ -132,6 +133,13 @@ export default function Home() {
         {/* FAQ Section */}
         <div className="w-full">
           <FAQSection />
+        </div>
+
+        {/* Newsletter Section */}
+        <div className="w-full py-20">
+          <div className="max-w-6xl mx-auto px-6">
+            <NewsletterSignup />
+          </div>
         </div>
 
         {/* Final CTA */}

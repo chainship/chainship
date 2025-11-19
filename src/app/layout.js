@@ -59,7 +59,7 @@ export const metadata = {
     card: 'summary_large_image',
     title: 'Chainship - Remote-First Web3 Development Team',
     description: 'Expert blockchain developers building dApps, smart contracts, and DeFi protocols. Remote-first team, 2-4 week sprints.',
-    creator: '@soulz_eth',
+    creator: '@soluz_eth',
     images: ['/logo-transparent-bg.png'],
   },
   robots: {

@@ -25,7 +25,7 @@ export default function Footer() {
             </p>
             <div className="flex gap-2">
               <a
-                href="https://x.com/soulz_eth"
+                href="https://x.com/soluz_eth"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-2 rounded-full border border-black/[0.08] dark:border-white/[0.08] hover:bg-black/[0.02] dark:hover:bg-white/[0.02] transition-all text-black dark:text-white"

@@ -164,22 +164,7 @@ export default function ContactPage() {
                 </a>
 
                 <a
-                  href="https://discord.gg/chainship"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-4 text-black/60 dark:text-white/60 hover:text-black dark:hover:text-white transition-colors"
-                >
-                  <div className="w-12 h-12 rounded-full border border-accent flex items-center justify-center">
-                    <MessageCircle size={20} />
-                  </div>
-                  <div>
-                    <div className="text-sm font-medium text-black/40 dark:text-white/40">Discord</div>
-                    <div className="font-medium">Join our community</div>
-                  </div>
-                </a>
-
-                <a
-                  href="https://twitter.com/chainship"
+                  href="https://x.com/soulz_eth"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-4 text-black/60 dark:text-white/60 hover:text-black dark:hover:text-white transition-colors"
@@ -188,8 +173,8 @@ export default function ContactPage() {
                     <Twitter size={20} />
                   </div>
                   <div>
-                    <div className="text-sm font-medium text-black/40 dark:text-white/40">Twitter</div>
-                    <div className="font-medium">@chainship</div>
+                    <div className="text-sm font-medium text-black/40 dark:text-white/40">X (Twitter)</div>
+                    <div className="font-medium">@soulz_eth</div>
                   </div>
                 </a>
 

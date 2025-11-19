@@ -100,6 +100,8 @@ export default function ResourcesPage() {
 
   const handleEmailSubmit = (e) => {
     e.preventDefault();
+    if (!selectedResource) return;
+    
     // In production, this would:
     // 1. Submit email to your mailing list
     // 2. Send download link via email
@@ -214,14 +216,14 @@ export default function ResourcesPage() {
         <NewsletterSignup />
 
         {/* Download Modal */}
-        {showDownloadForm && (
+        {showDownloadForm && selectedResource && (
           <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-6">
             <div className="bg-white dark:bg-black border border-black/[0.08] dark:border-white/[0.08] rounded-2xl p-8 max-w-md w-full">
               <h3 className="text-2xl font-bold text-black dark:text-white mb-4">
                 Get Your Free Download
               </h3>
               <p className="text-black/60 dark:text-white/60 mb-6">
-                Enter your email to receive "{selectedResource?.title}" instantly.
+                Enter your email to receive "{selectedResource.title}" instantly.
               </p>
               <form onSubmit={handleEmailSubmit} className="space-y-4">
                 <input

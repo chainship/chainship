@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { Twitter, Github, Linkedin, Mail, MessageCircle } from "lucide-react";
+import { Twitter, Github } from "lucide-react";
 
 export default function Footer() {
   return (
@@ -25,40 +25,22 @@ export default function Footer() {
             </p>
             <div className="flex gap-2">
               <a
-                href="https://twitter.com"
+                href="https://x.com/soulz_eth"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-2 rounded-full border border-black/[0.08] dark:border-white/[0.08] hover:bg-black/[0.02] dark:hover:bg-white/[0.02] transition-all text-black dark:text-white"
-                aria-label="Twitter"
+                aria-label="X (Twitter)"
               >
                 <Twitter size={16} />
               </a>
               <a
-                href="https://github.com"
+                href="https://github.com/chainship"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-2 rounded-full border border-black/[0.08] dark:border-white/[0.08] hover:bg-black/[0.02] dark:hover:bg-white/[0.02] transition-all text-black dark:text-white"
                 aria-label="GitHub"
               >
                 <Github size={16} />
-              </a>
-              <a
-                href="https://linkedin.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-2 rounded-full border border-black/[0.08] dark:border-white/[0.08] hover:bg-black/[0.02] dark:hover:bg-white/[0.02] transition-all text-black dark:text-white"
-                aria-label="LinkedIn"
-              >
-                <Linkedin size={16} />
-              </a>
-              <a
-                href="https://discord.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-2 rounded-full border border-black/[0.08] dark:border-white/[0.08] hover:bg-black/[0.02] dark:hover:bg-white/[0.02] transition-all text-black dark:text-white"
-                aria-label="Discord"
-              >
-                <MessageCircle size={16} />
               </a>
             </div>
           </div>

@@ -18,7 +18,7 @@ const faqs = [
   },
   {
     question: "How does remote collaboration work?",
-    answer: "We use modern tools like Slack, Discord, and GitHub for seamless communication. You'll receive daily updates, have access to our project management dashboard, and can schedule calls anytime. Being remote means we're available across time zones."
+    answer: "We use modern tools like Slack, GitHub, and email for seamless communication. You'll receive daily updates, have access to our project management dashboard, and can schedule calls anytime. Being remote means we're available across time zones."
   },
   {
     question: "Do you provide ongoing support after launch?",

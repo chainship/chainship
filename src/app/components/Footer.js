@@ -120,8 +120,8 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/quote" className="text-black/60 dark:text-white/60 hover:text-black dark:hover:text-white transition-colors text-sm">
-                  Get Quote
+                <Link href="/hire-us" className="text-black/60 dark:text-white/60 hover:text-black dark:hover:text-white transition-colors text-sm">
+                  Hire Us
                 </Link>
               </li>
               <li>

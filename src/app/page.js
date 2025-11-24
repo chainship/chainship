@@ -84,16 +84,16 @@ export default function Home() {
 
           {/* CTA */}
           <div className="flex flex-col sm:flex-row gap-3 w-full sm:w-auto max-w-lg">
-            <Link href="/quote" className="flex-1">
-              <button className="relative w-full h-14 px-12 bg-black dark:bg-white text-white dark:text-black text-sm font-semibold tracking-wide rounded-full hover:scale-[1.02] transition-transform flex items-center justify-center gap-3 shadow-lg shadow-black/10 dark:shadow-white/10 whitespace-nowrap">
-                Get Quote
-                <ChevronsLeftRight size={18} />
-              </button>
-            </Link>
             <Link href="/work" className="flex-1">
               <button className="w-full h-14 px-12 border border-black/20 dark:border-white/20 text-black dark:text-white text-sm font-semibold tracking-wide rounded-full hover:scale-[1.02] hover:bg-black/[0.02] dark:hover:bg-white/[0.02] transition-all flex items-center justify-center gap-3 whitespace-nowrap">
-                View Work
+                View Works
                 <ChevronRight size={18} />
+              </button>
+            </Link>
+            <Link href="/hire-us" className="flex-1">
+              <button className="relative w-full h-14 px-12 bg-black dark:bg-white text-white dark:text-black text-sm font-semibold tracking-wide rounded-full hover:scale-[1.02] transition-transform flex items-center justify-center gap-3 shadow-lg shadow-black/10 dark:shadow-white/10 whitespace-nowrap">
+                Hire Us
+                <ChevronsLeftRight size={18} />
               </button>
             </Link>
           </div>
@@ -151,9 +151,9 @@ export default function Home() {
             <p className="text-xl sm:text-2xl text-black/50 dark:text-white/50 mb-12 max-w-3xl mx-auto font-light">
               Join the growing list of successful Web3 projects we've helped launch
             </p>
-            <Link href="/quote">
+            <Link href="/hire-us">
               <button className="px-14 py-6 bg-black dark:bg-white text-white dark:text-black text-sm font-semibold tracking-wide rounded-full hover:scale-[1.02] transition-transform shadow-xl shadow-black/10 dark:shadow-white/10">
-                Get Your Quote Today
+                Hire Us Today
               </button>
             </Link>
           </div>

@@ -43,7 +43,7 @@ export default function QuotePage() {
     setStatus({ type: "", message: "" });
 
     try {
-      const response = await fetch("/api/quote", {
+      const response = await fetch("/api/hire-us", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -56,7 +56,7 @@ export default function QuotePage() {
       if (response.ok) {
         setStatus({
           type: "success",
-          message: data.message || "Quote request submitted successfully!",
+          message: data.message || "Request submitted successfully! We'll be in touch within 24 hours.",
         });
         setFormData({
           name: "",
@@ -71,7 +71,7 @@ export default function QuotePage() {
       } else {
         setStatus({
           type: "error",
-          message: data.error || "Failed to submit quote request. Please try again.",
+          message: data.error || "Failed to submit request. Please try again.",
         });
       }
     } catch (error) {
@@ -96,10 +96,10 @@ export default function QuotePage() {
             <span className="text-sm font-medium text-black dark:text-white">Fast turnaround guaranteed</span>
           </div>
           <h1 className="text-5xl sm:text-6xl md:text-7xl font-black tracking-tight text-black dark:text-white mb-8">
-            Get Your Quote
+            Hire Us
           </h1>
           <p className="text-xl sm:text-2xl text-black/50 dark:text-white/50 max-w-3xl mx-auto font-light">
-            Tell us about your Web3 project and we'll get back to you within 24 hours with a detailed quote.
+            Tell us about your Web3 project and we'll get back to you within 24 hours to start building.
           </p>
         </div>
 

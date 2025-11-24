@@ -84,9 +84,9 @@ export default function SmartContractsPage() {
             Expert blockchain developers building production-ready smart contracts in Solidity, Rust, and Move. Security-first, gas-optimized, fully tested.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/quote">
+            <Link href="/hire-us">
               <button className="px-12 h-14 bg-black dark:bg-white text-white dark:text-black text-sm font-semibold tracking-wide rounded-full hover:scale-[1.02] transition-transform shadow-lg">
-                Get Free Quote
+                Hire Us
               </button>
             </Link>
             <Link href="/resources">
@@ -229,11 +229,11 @@ export default function SmartContractsPage() {
             Need Smart Contract Development?
           </h2>
           <p className="text-xl text-black/60 dark:text-white/60 mb-8 max-w-2xl mx-auto">
-            Get secure, audited smart contracts from experienced blockchain developers. Free quote, 2-4 week delivery.
+            Get secure, audited smart contracts from experienced blockchain developers. 2-4 week delivery.
           </p>
-          <Link href="/quote">
+          <Link href="/hire-us">
             <button className="px-12 h-14 bg-black dark:bg-white text-white dark:text-black text-sm font-semibold tracking-wide rounded-full hover:scale-[1.02] transition-transform shadow-lg">
-              Get Free Quote
+              Hire Us Now
             </button>
           </Link>
         </div>

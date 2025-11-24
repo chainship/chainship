@@ -68,9 +68,9 @@ export default function SolanaDevelopmentPage() {
             Expert Rust and Anchor developers building high-performance Solana programs. From concept to mainnet in 2-4 weeks.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/quote">
+            <Link href="/hire-us">
               <button className="px-12 h-14 bg-black dark:bg-white text-white dark:text-black text-sm font-semibold tracking-wide rounded-full hover:scale-[1.02] transition-transform shadow-lg">
-                Get Free Quote
+                Hire Us
               </button>
             </Link>
             <Link href="/work">
@@ -232,11 +232,11 @@ export default function SolanaDevelopmentPage() {
             Ready to Build on Solana?
           </h2>
           <p className="text-xl text-black/60 dark:text-white/60 mb-8 max-w-2xl mx-auto">
-            Get a free quote and timeline for your Solana project. Expert Rust developers, 2-4 week sprints.
+            Hire our expert Rust developers for your Solana project. 2-4 week sprints, get started in 24 hours.
           </p>
-          <Link href="/quote">
+          <Link href="/hire-us">
             <button className="px-12 h-14 bg-black dark:bg-white text-white dark:text-black text-sm font-semibold tracking-wide rounded-full hover:scale-[1.02] transition-transform shadow-lg">
-              Get Free Quote
+              Hire Us Now
             </button>
           </Link>
         </div>

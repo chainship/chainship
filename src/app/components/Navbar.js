@@ -48,12 +48,10 @@ export default function Navbar() {
         {/* Desktop Menu */}
         <div className="hidden md:flex items-center gap-8 lg:gap-10 text-sm font-medium text-black/60 dark:text-white/60">
           <Link href="/" className="hover:text-black dark:hover:text-white transition-colors tracking-wide">Home</Link>
-          <Link href="/about" className="hover:text-black dark:hover:text-white transition-colors tracking-wide">About</Link>
-          <Link href="/work" className="hover:text-black dark:hover:text-white transition-colors tracking-wide">Works</Link>
-          <Link href="/blog" className="hover:text-black dark:hover:text-white transition-colors tracking-wide">Blog</Link>
-          <Link href="/resources" className="hover:text-black dark:hover:text-white transition-colors tracking-wide">Resources</Link>
-          <Link href="/contact" className="hover:text-black dark:hover:text-white transition-colors tracking-wide">Contact</Link>
-          <Link href="/quote" className="px-6 py-2.5 bg-black dark:bg-white text-white dark:text-black rounded-full hover:scale-[1.02] transition-transform text-sm font-semibold tracking-wide">Get Quote</Link>
+          <Link href="/about" className="hover:text-black dark:hover:text-white transition-colors tracking-wide">About Us</Link>
+          <Link href="/work" className="hover:text-black dark:hover:text-white transition-colors tracking-wide">Our Works</Link>
+          <Link href="/contact" className="hover:text-black dark:hover:text-white transition-colors tracking-wide">Contact Us</Link>
+          <Link href="/hire-us" className="px-6 py-2.5 bg-black dark:bg-white text-white dark:text-black rounded-full hover:scale-[1.02] transition-transform text-sm font-semibold tracking-wide">Hire Us</Link>
           {/* <button
             onClick={cycleColor}
             className="p-2 rounded-full border border-accent hover:shadow-accent transition-all text-black dark:text-white"
@@ -114,42 +112,28 @@ export default function Navbar() {
               className="block py-3 px-4 text-base font-medium text-black dark:text-white hover:bg-black/[0.02] dark:hover:bg-white/[0.02] transition-colors rounded-lg"
               onClick={() => setMobileMenuOpen(false)}
             >
-              About
+              About Us
             </Link>
             <Link 
               href="/work" 
               className="block py-3 px-4 text-base font-medium text-black dark:text-white hover:bg-black/[0.02] dark:hover:bg-white/[0.02] transition-colors rounded-lg"
               onClick={() => setMobileMenuOpen(false)}
             >
-              Works
-            </Link>
-            <Link 
-              href="/blog" 
-              className="block py-3 px-4 text-base font-medium text-black dark:text-white hover:bg-black/[0.02] dark:hover:bg-white/[0.02] transition-colors rounded-lg"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              Blog
-            </Link>
-            <Link 
-              href="/resources" 
-              className="block py-3 px-4 text-base font-medium text-black dark:text-white hover:bg-black/[0.02] dark:hover:bg-white/[0.02] transition-colors rounded-lg"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              Resources
+              Our Works
             </Link>
             <Link 
               href="/contact" 
               className="block py-3 px-4 text-base font-medium text-black dark:text-white hover:bg-black/[0.02] dark:hover:bg-white/[0.02] transition-colors rounded-lg"
               onClick={() => setMobileMenuOpen(false)}
             >
-              Contact
+              Contact Us
             </Link>
             <Link 
-              href="/quote" 
+              href="/hire-us" 
               className="block w-full text-center py-4 mt-3 bg-black dark:bg-white text-white dark:text-black rounded-full font-semibold tracking-wide"
               onClick={() => setMobileMenuOpen(false)}
             >
-              Get A Quote
+              Hire Us
             </Link>
           </div>
         </div>

@@ -67,15 +67,15 @@ export async function POST(request) {
     return Response.json(
       {
         success: true,
-        message: 'Quote request received successfully. We\'ll respond within 24 hours!',
+        message: 'Request received successfully. We\'ll get back to you within 24 hours!',
         id: result[0]?.id
       },
       { status: 201 }
     );
   } catch (error) {
-    console.error('Quote API Error:', error);
+    console.error('Hire API Error:', error);
     return Response.json(
-      { error: 'Failed to submit quote request' },
+      { error: 'Failed to submit request' },
       { status: 500 }
     );
   }

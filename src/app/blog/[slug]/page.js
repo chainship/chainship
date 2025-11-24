@@ -204,9 +204,9 @@ export default function BlogPostPage() {
           <p className="text-xl text-black/60 dark:text-white/60 mb-8 max-w-2xl mx-auto">
             Let Chainship build your blockchain project with production-ready code in 2-4 weeks.
           </p>
-          <Link href="/quote">
+          <Link href="/hire-us">
             <button className="px-12 h-14 bg-black dark:bg-white text-white dark:text-black text-sm font-semibold tracking-wide rounded-full hover:scale-[1.02] transition-transform shadow-lg">
-              Get Free Quote
+              Hire Us
             </button>
           </Link>
         </div>
